@@ -1,17 +1,19 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "author": "",
-  "license": "",
-  "engines": {
-    "node": ">=6.13.0"
-  },
+  "name": "sidebar-views",
+  "version": "1.0.0",
+  "description": "FEC project",
+  "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosacloud/sidebar-views.git"
   },
-  "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
-  }
+  "author": "Scott Josephson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sosacloud/sidebar-views/issues"
+  },
+  "homepage": "https://github.com/sosacloud/sidebar-views#readme"
 }
