@@ -39,7 +39,7 @@ CREATE TABLE likes_tracks(
     REFERENCES tracks(id)
 );
 
-CREATE TABLE playlist_tracks(
+CREATE TABLE playlists_tracks(
   track_id int,
   playlist_id int,
   FOREIGN KEY (track_id)
@@ -48,7 +48,7 @@ CREATE TABLE playlist_tracks(
     REFERENCES playlists(id)
 );
 
-CREATE TABLE reposts_track(
+CREATE TABLE reposts_tracks(
   user_id int,
   track_id int,
   FOREIGN KEY (user_id)
@@ -71,3 +71,18 @@ LOAD DATA LOCAL INFILE 'db/playlistsData.txt'
   INTO TABLE playlists
   FIELDS TERMINATED BY ','
   (playlistImgUrl, userName, likes);
+
+LOAD DATA LOCAL INFILE 'db/likesTracksData.txt' 
+  INTO TABLE likes_tracks
+  FIELDS TERMINATED BY ','
+  (user_id, track_id);
+
+LOAD DATA LOCAL INFILE 'db/playlistsTracksData.txt' 
+  INTO TABLE playlists_tracks
+  FIELDS TERMINATED BY ','
+  (track_id, playlist_id);
+
+LOAD DATA LOCAL INFILE 'db/repostsData.txt' 
+  INTO TABLE reposts_tracks
+  FIELDS TERMINATED BY ','
+  (user_id, track_id);
