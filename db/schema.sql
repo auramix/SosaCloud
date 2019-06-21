@@ -57,7 +57,17 @@ CREATE TABLE reposts_track(
     REFERENCES tracks(id)
 );
 
-LOAD DATA LOCAL INFILE 'db/testData.txt' 
+LOAD DATA LOCAL INFILE 'db/tracksData.txt' 
   INTO TABLE tracks
   FIELDS TERMINATED BY ','
   (trackName, artistName, numReposts, numPlays, trackImgUrl, numComments);
+
+LOAD DATA LOCAL INFILE 'db/usersData.txt' 
+  INTO TABLE users
+  FIELDS TERMINATED BY ','
+  (userName, userImgUrl);
+
+LOAD DATA LOCAL INFILE 'db/playlistsData.txt' 
+  INTO TABLE playlists
+  FIELDS TERMINATED BY ','
+  (playlistImgUrl, userName, likes);
