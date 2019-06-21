@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sosacloud/sidebar-views/issues"
   },
-  "homepage": "https://github.com/sosacloud/sidebar-views#readme"
+  "homepage": "https://github.com/sosacloud/sidebar-views#readme",
+  "dependencies": {
+    "faker": "^4.1.0"
+  }
 }
