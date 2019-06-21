@@ -25,8 +25,8 @@ CREATE TABLE users(
 CREATE TABLE playlists(
   id int NOT NULL AUTO_INCREMENT,
   playlistImgUrl varchar(100) NOT NULL,
-  likes int DEFAULT 0,
   userName varchar(80),
+  likes int DEFAULT 0,
   PRIMARY KEY(id)
 );
 
