@@ -51,13 +51,13 @@ let playlistsTracksData = createJuncData(100);
 let repostsData = createJuncData(100);
 
 let createData = function () {
-  fs.writeFileSync(__dirname + '/tracksData.txt', tracksData);
-  fs.writeFileSync(__dirname + '/usersData.txt', usersData);
-  fs.writeFileSync(__dirname + '/playlistsData.txt', playlistsData);
+  fs.writeFileSync(__dirname + '/fake_data/tracksData.txt', tracksData);
+  fs.writeFileSync(__dirname + '/fake_data/usersData.txt', usersData);
+  fs.writeFileSync(__dirname + '/fake_data/playlistsData.txt', playlistsData);
 
-  fs.writeFileSync(__dirname + '/likesTracksData.txt', likesTracksData);
-  fs.writeFileSync(__dirname + '/playlistsTracksData.txt', playlistsTracksData);
-  fs.writeFileSync(__dirname + '/repostsData.txt', repostsData);
+  fs.writeFileSync(__dirname + '/fake_data/likesTracksData.txt', likesTracksData);
+  fs.writeFileSync(__dirname + '/fake_data/playlistsTracksData.txt', playlistsTracksData);
+  fs.writeFileSync(__dirname + '/fake_data/repostsData.txt', repostsData);
 };
 
 exports.createData = createData;

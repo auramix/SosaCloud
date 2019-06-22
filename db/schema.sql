@@ -57,32 +57,32 @@ CREATE TABLE reposts_tracks(
     REFERENCES tracks(id)
 );
 
-LOAD DATA LOCAL INFILE 'db/tracksData.txt' 
+LOAD DATA LOCAL INFILE 'db/fake_data/tracksData.txt' 
   INTO TABLE tracks
   FIELDS TERMINATED BY ','
   (trackName, artistName, numReposts, numPlays, trackImgUrl, numComments);
 
-LOAD DATA LOCAL INFILE 'db/usersData.txt' 
+LOAD DATA LOCAL INFILE 'db/fake_data/usersData.txt' 
   INTO TABLE users
   FIELDS TERMINATED BY ','
   (userName, userImgUrl);
 
-LOAD DATA LOCAL INFILE 'db/playlistsData.txt' 
+LOAD DATA LOCAL INFILE 'db/fake_data/playlistsData.txt' 
   INTO TABLE playlists
   FIELDS TERMINATED BY ','
   (playlistImgUrl, userName, likes);
 
-LOAD DATA LOCAL INFILE 'db/likesTracksData.txt' 
+LOAD DATA LOCAL INFILE 'db/fake_data/likesTracksData.txt' 
   INTO TABLE likes_tracks
   FIELDS TERMINATED BY ','
   (user_id, track_id);
 
-LOAD DATA LOCAL INFILE 'db/playlistsTracksData.txt' 
+LOAD DATA LOCAL INFILE 'db/fake_data/playlistsTracksData.txt' 
   INTO TABLE playlists_tracks
   FIELDS TERMINATED BY ','
   (track_id, playlist_id);
 
-LOAD DATA LOCAL INFILE 'db/repostsData.txt' 
+LOAD DATA LOCAL INFILE 'db/fake_data/repostsData.txt' 
   INTO TABLE reposts_tracks
   FIELDS TERMINATED BY ','
   (user_id, track_id);
