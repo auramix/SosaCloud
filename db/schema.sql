@@ -24,6 +24,7 @@ CREATE TABLE users(
 
 CREATE TABLE playlists(
   id int NOT NULL AUTO_INCREMENT,
+  playlistName varchar (80) NOT NULL,
   playlistImgUrl varchar(100) NOT NULL,
   userName varchar(80),
   likes int DEFAULT 0,
@@ -70,7 +71,7 @@ LOAD DATA LOCAL INFILE 'db/fake_data/usersData.txt'
 LOAD DATA LOCAL INFILE 'db/fake_data/playlistsData.txt' 
   INTO TABLE playlists
   FIELDS TERMINATED BY ','
-  (playlistImgUrl, userName, likes);
+  (playlistName, playlistImgUrl, userName, likes);
 
 LOAD DATA LOCAL INFILE 'db/fake_data/likesTracksData.txt' 
   INTO TABLE likes_tracks
