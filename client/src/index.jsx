@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ListTrack from './components/ListTrack.jsx';
+import Track from './components/Track.jsx';
+import RelatedTrackList from './styled-comps/RelatedTrackList.jsx';
 
 
 class App extends React.Component {
@@ -9,9 +10,11 @@ class App extends React.Component {
   }
 
   render() {
-    return (<ul>
-      <ListTrack />
-    </ul>);
+    return (
+    <RelatedTrackList>
+        <Track />
+    </RelatedTrackList>
+    );
   }
 }
 

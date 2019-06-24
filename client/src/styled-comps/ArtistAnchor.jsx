@@ -7,6 +7,9 @@ const ArtistAnchor = styled.a`
   font-weight: 100;
   font-size: 14px;
   font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  display: block;
+  list-style: none;
+  text-decoration: none;
 `;
 
 export default ArtistAnchor;
