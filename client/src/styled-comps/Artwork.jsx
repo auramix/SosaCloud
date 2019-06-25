@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Artwork = styled.span`
   background-image: url(${props => props.imageUrl});
-  margin-right: 4px;
+  margin-right: 10px;
   padding: 5px 6px;
   width: 50px;
   height: 50px;
