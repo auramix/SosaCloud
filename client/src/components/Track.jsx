@@ -1,6 +1,6 @@
 import React from 'react';
 import Artwork from '../styled-comps/Artwork.jsx';
-import ListItemInfo from '../styled-comps/TrackInfo.jsx';
+import TrackInfo from '../styled-comps/TrackInfo.jsx';
 
 export default class ListTrack extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ export default class ListTrack extends React.Component {
       <li>
         <div >
           <Artwork imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"}/>
-          <ListItemInfo />  
+          <TrackInfo />  
         </div>
       </li>
     );

@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import TrackInteractions from './TrackInteractions.jsx'
 
 
-const TrackInfo = styled.div`
+const TrackInfoDiv = styled.div`
   overflow: hidden;
-  font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font: 14px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 100;
   line-height: 1;
   margin: 0 0 2px;
   display: block;
@@ -14,26 +15,28 @@ const TrackInfo = styled.div`
   box-sizing: border-box;
 `; 
 
-const ArtistAnchor = styled(TrackInfo)`
+const ArtistAnchor = styled(TrackInfoDiv)`
   color: #999;
+  margin: 5px 5px 5px 0px;
 `;
 
-const TrackNameAnchor = styled(TrackInfo)`
+const TrackNameAnchor = styled(TrackInfoDiv)`
   color: #333;
+  margin: 5px 5px 5px 0px;
 `; 
 
-const ListItemInfo = function(props) {
+const TrackInfo = function(props) {
   return (
-    <TrackInfo>
+    <TrackInfoDiv>
       <ArtistAnchor as="a" href={""}>
-        <span>someArtist</span>
+        <span>htor</span>
       </ArtistAnchor>
       <TrackNameAnchor as="a" href={""}>
-        TrackName
+        path0
       </TrackNameAnchor>
       <TrackInteractions />
-    </TrackInfo>
+    </TrackInfoDiv>
   )
 }
 
-export default ListItemInfo;
+export default TrackInfo;
