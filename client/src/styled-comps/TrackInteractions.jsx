@@ -58,6 +58,12 @@ const Comment = styled(Like) `
 
 const Span = styled.span`
   margin: 0px 0px 0px 2px;
+  
+`;
+const HoverSpan = styled(Span)`
+  :hover {
+    color: #333;
+  }
 `;
 
 const TrackInteractions = function(props) {
@@ -65,9 +71,9 @@ const TrackInteractions = function(props) {
     <div>
       <List>
       <li><Play><Span>241</Span></Play></li>
-      <li><Like href={""}>19</Like></li>
-      <li><Repost href={""}>4</Repost></li>
-      <li><Comment href={""}>2</Comment></li>
+      <li><Like href={""}><HoverSpan>19</HoverSpan></Like></li>
+      <li><Repost href={""}><HoverSpan>4</HoverSpan></Repost></li>
+      <li><Comment href={""}><HoverSpan>2</HoverSpan></Comment></li>
     </List>
     </div> 
   )
