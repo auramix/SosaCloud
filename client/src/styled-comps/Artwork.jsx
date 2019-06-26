@@ -9,6 +9,7 @@ const ArtSpan = styled.span`
   height: 50px;
   position: relative;
   float: left;
+
 `; 
 
 
@@ -21,7 +22,10 @@ const ImageSpan = styled.span`
 `;
 
 const PlayButtonSpan = styled.span`
-  visibility: visible;
+  :hover {
+    visibility: visible;
+  }
+  visibility: hidden;
   display: inline-block;
   position: absolute;
   top: 5px;
@@ -30,9 +34,7 @@ const PlayButtonSpan = styled.span`
   right: 6px;
   padding: 11px;
   z-index: 2;
-  :hover {
-    visibility: visible;
-  }
+  
 `;
 const PlayButton = styled.a`
 ::before {
@@ -69,7 +71,7 @@ const Artwork = (props) => {
       <div>
         <ImageSpan imageUrl={props.imageUrl}/>
       </div>
-      <PlayButtonSpan>
+      <PlayButtonSpan className={"test"}>
         <PlayButton />
       </PlayButtonSpan>
     </ArtSpan>

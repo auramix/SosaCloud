@@ -30,6 +30,7 @@ const Play = styled.a`
 
   ::before {
     display: inline-block;
+    margin-right: 5px;
     content: "";
     width: 16px;
     height: 12px;
@@ -41,9 +42,13 @@ const Play = styled.a`
 `;
 
 const Like = styled(Play) `
+:hover {
+  color: #333;
+}
 ::before {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+c3RhdHNfbGlrZXNfZ3JleTwvdGl0bGU+PHBhdGggZD0iTTEwLjgwNSAzYy0yLjAyIDAtMi44MDQgMi4zNDUtMi44MDQgMi4zNDVTNy4yMTMgMyA1LjE5NiAzQzMuNDk0IDMgMS43NDggNC4wOTYgMi4wMyA2LjUxNGMuMzQ0IDIuOTUzIDUuNzI1IDYuNDc5IDUuOTYzIDYuNDg3LjIzOC4wMDggNS43MzgtMy43MjIgNS45ODgtNi41QzE0LjE4OCA0LjIwMSAxMi41MDcgMyAxMC44MDUgM3oiIGZpbGw9IiM5OTkiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
 }
+
 `;
 const Repost = styled(Like) `
 ::before {
@@ -56,24 +61,15 @@ const Comment = styled(Like) `
 }
 `;
 
-const Span = styled.span`
-  margin: 0px 0px 0px 2px;
-  
-`;
-const HoverSpan = styled(Span)`
-  :hover {
-    color: #333;
-  }
-`;
 
 const TrackInteractions = function(props) {
   return (
     <div>
       <List>
-      <li><Play><Span>241</Span></Play></li>
-      <li><Like href={""}><HoverSpan>19</HoverSpan></Like></li>
-      <li><Repost href={""}><HoverSpan>4</HoverSpan></Repost></li>
-      <li><Comment href={""}><HoverSpan>2</HoverSpan></Comment></li>
+      <li><Play><span>241</span></Play></li>
+      <li><Like href={""}><span>19</span></Like></li>
+      <li><Repost href={""}><span>4</span></Repost></li>
+      <li><Comment href={""}><span>2</span></Comment></li>
     </List>
     </div> 
   )
