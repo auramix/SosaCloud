@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import TrackInteractions from './TrackInteractions.jsx'
+import TrackButtons from './TrackButtons.jsx';
 
 
 const TrackInfoDiv = styled.div`
@@ -32,12 +33,15 @@ const TrackInfo = function(props) {
   return (
     <TrackInfoDiv>
       <ArtistAnchor as="a" href={""}>
-        <span>htor</span>
+        <span>Artist</span>
       </ArtistAnchor>
+
       <TrackNameAnchor as="a" href={""}>
-        path0
+        Track Name
       </TrackNameAnchor>
+
       <TrackInteractions />
+      <TrackButtons />
     </TrackInfoDiv>
   )
 }

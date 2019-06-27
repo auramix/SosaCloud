@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const StyledDiv = styled.div`
   :hover {
-    .test {
+    .overlay_buttons {
       visibility: visible;
     }
   }

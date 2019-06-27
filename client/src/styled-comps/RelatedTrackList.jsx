@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 
 const RelatedTrackList = styled.ul`
-  display: table;
+  padding: 0;
+  margin: 0;
+  display: block;
   list-style: none;
   text-align: left;
 `; 
