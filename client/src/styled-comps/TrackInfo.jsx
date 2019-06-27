@@ -18,7 +18,7 @@ const TrackInfoDiv = styled.div`
 
 const ArtistAnchor = styled(TrackInfoDiv)`
   color: #999;
-  margin: 5px 5px 5px 0px;
+  margin: 5px 5px 2px 0px;
   :hover {
     color: #333;
   }
@@ -26,7 +26,9 @@ const ArtistAnchor = styled(TrackInfoDiv)`
 
 const TrackNameAnchor = styled(TrackInfoDiv)`
   color: #333;
-  margin: 5px 5px 5px 0px;
+  margin: 2px 5px 1px 0px;
+  line-height: 1.3em;
+  font-weight: 50%;
 `; 
 
 const TrackInfo = function(props) {

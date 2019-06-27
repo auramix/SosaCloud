@@ -12,6 +12,8 @@ const StyledDiv = styled.div`
   }
 `;
 
+
+
 export default class Track extends React.Component {
   constructor(props) {
     super(props);

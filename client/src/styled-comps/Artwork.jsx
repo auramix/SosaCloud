@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 
 const ArtSpan = styled.span`
-  margin-right: 10px;
-  padding: 5px 6px;
+  margin-right: 4px;
+  padding: 5px 6px 5px 0px;
   width: 50px;
   height: 50px;
   position: relative;
@@ -27,8 +27,6 @@ const PlayButtonSpan = styled.span`
   position: absolute;
   top: 5px;
   bottom: 5px;
-  left: 6px;
-  right: 6px;
   padding: 11px;
   z-index: 2;
 `;

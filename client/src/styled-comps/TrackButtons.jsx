@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import MoreButtonList from './MoreButtonList.jsx';
 
 const StyledDiv = styled.div`
+  visibility: hidden;
   background: linear-gradient(to right,rgba(255,255,255,.1),#fff 17px);
   position: absolute;
-  height: 50px;
-  width: 50px;
+  height: auto;
+  width: 55px;
   top: 18px;
   right: 0;
   padding: 0 10px 0 20px;
@@ -29,23 +31,31 @@ const LikeButton = styled.button`
 
   content: "";
   display: inline-block;
-  position: absolute;
+  position: relative;
   background-repeat: no-repeat;
   background-position: center center;
   width: 20px;
   height: 20px;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-  left: 4px;
+  margin-right: 5px;
+  `;
+
+const MoreButton = styled(LikeButton)`
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iNCIgdmlld0JveD0iMCAwIDE0IDQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPm1vcmU8L3RpdGxlPjxnIGZpbGw9IiMyMjIiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiLz48Y2lyY2xlIGN4PSI3IiBjeT0iMiIgcj0iMiIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMiIgcj0iMiIvPjwvZz48L3N2Zz4=);
+  position: relative;
+  margin-right: 0px;
   `;
 
 
 const TrackButtons = function(props) {
   return (
-    <StyledDiv>
-      <LikeButton title={"Like"} />
-    </StyledDiv>
+    <div>
+      <StyledDiv className={"overlay_buttons"}>
+        <LikeButton title={"Like"} />
+        <MoreButton title={"More"} />
+        <MoreButtonList />
+      </StyledDiv>
+      
+    </div>
   );
   
 

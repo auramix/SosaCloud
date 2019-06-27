@@ -21,16 +21,6 @@ const Sidebar = styled.div`
   margin-bottom: 50px;
 `;
 
-const StyledTrack = styled(Track)`
-  height: 240px;
-  width: 58.18px;
-  :hover {
-    .test {
-      visibility: visible;
-    }
-  }
-`;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -41,7 +31,7 @@ class App extends React.Component {
       <PageDiv>
         <Sidebar>
           <RelatedTrackList>
-            <StyledTrack />
+            <Track />
           </RelatedTrackList>
         </Sidebar>
       </PageDiv>
