@@ -19,7 +19,7 @@ let createTracksData = function (qty) {
 let createUsersData = function (qty) {
   let data = '';
   for (var i = 0; i < qty; i++) {
-    data += `${faker.internet.userName()}, ${imageUrl()}\n`
+    data += `${faker.internet.userName()}, ${imageUrl()}, ${rnd(1000000)}\n`
   }
   return data.slice(0, -1);
 }

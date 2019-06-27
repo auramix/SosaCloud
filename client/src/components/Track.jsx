@@ -1,6 +1,16 @@
 import React from 'react';
 import Artwork from '../styled-comps/Artwork.jsx';
 import TrackInfo from '../styled-comps/TrackInfo.jsx';
+import styled from 'styled-components';
+
+
+const StyledDiv = styled.div`
+  :hover {
+    .test {
+      visibility: visible;
+    }
+  }
+`;
 
 export default class Track extends React.Component {
   constructor(props) {
@@ -10,10 +20,10 @@ export default class Track extends React.Component {
   render() {
     return (
       <li>
-        <div >
+        <StyledDiv >
           <Artwork imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"}/>
           <TrackInfo />  
-        </div>
+        </StyledDiv>
       </li>
     );
   }

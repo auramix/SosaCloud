@@ -19,6 +19,7 @@ CREATE TABLE users(
   id int NOT NULL AUTO_INCREMENT,
   userName varchar(80),
   userImgUrl varchar(100) NOT NULL,
+  numFollowers int DEFAULT 0,
   PRIMARY KEY(id)
 );
 
@@ -66,7 +67,7 @@ LOAD DATA LOCAL INFILE 'db/fake_data/tracksData.txt'
 LOAD DATA LOCAL INFILE 'db/fake_data/usersData.txt' 
   INTO TABLE users
   FIELDS TERMINATED BY ','
-  (userName, userImgUrl);
+  (userName, userImgUrl, numFollowers);
 
 LOAD DATA LOCAL INFILE 'db/fake_data/playlistsData.txt' 
   INTO TABLE playlists
