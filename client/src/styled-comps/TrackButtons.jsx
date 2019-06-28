@@ -60,8 +60,9 @@ const TrackButtons = function(props) {
       <StyledDiv className={"overlay_buttons"}>
         <LikeButton title={"Like"} />
         <MoreButton title={"More"} />
+        <MoreButtonList />
       </StyledDiv>
-      <MoreButtonList />
+      
     </div>
   );
   

@@ -2,11 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
+  display: block;
   position: absolute;
   width: 150px;
   height: 160px;
-  left: 265px;
-  top: 40px;
+  top: 23px;
+  left: 25px;
+
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
 `;
 
 const Button = styled.button`
@@ -24,6 +29,10 @@ const Button = styled.button`
   font-size: 100%
   align-items: flex-start;
   border-bottom: 1px solid #e5e5e5;
+
+  :focus {
+    outline: none;
+  }
 
   :hover {
     background-color: #f2f2f2;
