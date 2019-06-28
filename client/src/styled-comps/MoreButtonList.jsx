@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-position: absolute;
-width: 150px;
-height: 160px;
-left: 265px;
-top: 40px;
+  position: absolute;
+  width: 150px;
+  height: 160px;
+  left: 265px;
+  top: 40px;
 `;
 
 const Button = styled.button`
@@ -24,6 +24,10 @@ const Button = styled.button`
   font-size: 100%
   align-items: flex-start;
   border-bottom: 1px solid #e5e5e5;
+
+  :hover {
+    background-color: #f2f2f2;
+  }
 
   ::before {
     content: "";
@@ -77,13 +81,12 @@ const StyledSpan = styled.span`
 
 const MoreButtonList = function(props) {
   return (
-    <StyledDiv>
+    <StyledDiv className={"more-list"}>
       <RepostButton title={"Repost"}><StyledSpan>Repost</StyledSpan></RepostButton>
       <ShareButton title={"Share"}><StyledSpan>Share</StyledSpan></ShareButton>
       <AddToNextButton title={"Add to Next up"}><StyledSpan>Add to Next up</StyledSpan></AddToNextButton>
       <AddToPlaylistButton title={"Add to Playlist"}><StyledSpan>Add to Playlist</StyledSpan></AddToPlaylistButton>
       <StationButton title={"Go to Station"}><StyledSpan>Station</StyledSpan></StationButton>
-
     </StyledDiv>
   )
 }
