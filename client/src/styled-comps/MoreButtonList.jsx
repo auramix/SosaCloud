@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-  display: none;
+  display: block;
   position: absolute;
   width: 150px;
   height: 160px;

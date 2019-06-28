@@ -43,7 +43,7 @@ const TrackInfo = function(props) {
       </TrackNameAnchor>
 
       <TrackInteractions />
-      <TrackButtons />
+      <TrackButtons clickHandler={props.clickHandler} clicked={props.clicked}/>
     </TrackInfoDiv>
   )
 }

@@ -19,14 +19,22 @@ const StyledDiv = styled.div`
 export default class Track extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      moreClicked: false
+    }
+    this.moreButtonHandler = this.moreButtonHandler.bind(this);
+  }
+
+  moreButtonHandler() {
+    this.setState({moreClicked: !this.state.moreClicked});
   }
 
   render() {
     return (
       <li>
         <StyledDiv >
-          <Artwork imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"}/>
-          <TrackInfo />  
+          <Artwork imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"} clicked={this.state.moreClicked}/>
+          <TrackInfo clicked={this.state.moreClicked} clickHandler={this.moreButtonHandler}/>  
         </StyledDiv>
       </li>
     );

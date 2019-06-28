@@ -21,7 +21,7 @@ const ImageSpan = styled.span`
 `;
 
 const PlayButtonSpan = styled.span`
-  visibility: hidden;
+  visibility: ${props => props.clicked ? 'visible' : 'hidden'};
   display: inline-block;
   position: absolute;
   top: 5px;
@@ -72,7 +72,7 @@ const Artwork = (props) => {
       <div>
         <ImageSpan imageUrl={props.imageUrl}/>
       </div>
-      <PlayButtonSpan className={"overlay_buttons"}>
+      <PlayButtonSpan className={"overlay_buttons"} clicked={props.clicked}>
         <PlayButton title={"Play"}></PlayButton>
       </PlayButtonSpan>
     </ArtSpan>

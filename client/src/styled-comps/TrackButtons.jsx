@@ -4,7 +4,7 @@ import MoreButtonDiv from '../components/MoreButtonDiv.jsx';
 
 
 const StyledDiv = styled.div`
-  visibility: hidden;
+  visibility: ${props => props.clicked ? 'visible' : 'hidden'};
   background: linear-gradient(to right,rgba(255,255,255,.1),#fff 17px);
   position: absolute;
   height: 20px;
@@ -51,9 +51,9 @@ const LikeButton = styled.button`
 const TrackButtons = function(props) {
 
   return (
-    <StyledDiv className={"overlay_buttons"}>
+    <StyledDiv className={"overlay_buttons"} clicked={props.clicked}>
       <LikeButton title={"Like"} />
-      <MoreButtonDiv />
+      <MoreButtonDiv clickHandler={props.clickHandler} clicked={props.clicked}/>
     </StyledDiv>
   );
 
