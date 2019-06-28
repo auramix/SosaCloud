@@ -44,7 +44,7 @@ const MoreButtonDiv = function(props) {
   
   return (
     <div>
-      <MoreButton title={"More"} clicked={props.clicked} onClick={props.clickHandler}/>
+      <MoreButton id={"more-btn"} title={"More"} clicked={props.clicked} onClick={props.clickHandler}/>
       {moreDropDown}
     </div>
   )

@@ -23,10 +23,16 @@ export default class Track extends React.Component {
       moreClicked: false
     }
     this.moreButtonHandler = this.moreButtonHandler.bind(this);
+    this.globalEventListener = this.globalEventListener.bind(this);
   }
 
   moreButtonHandler() {
     this.setState({moreClicked: !this.state.moreClicked});
+    this.globalEventListener();
+  };
+
+  globalEventListener() {
+    document.body.addEventListener('click', e => this.setState({moreClicked: false}));
   }
 
   render() {
