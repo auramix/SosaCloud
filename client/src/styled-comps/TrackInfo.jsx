@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import TrackInteractions from './TrackInteractions.jsx'
-import TrackButtons from './TrackButtons.jsx';
+import {TrackButtons} from './TrackButtons.jsx';
 
 
 const TrackInfoDiv = styled.div`

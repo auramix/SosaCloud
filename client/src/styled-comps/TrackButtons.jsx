@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import MoreButtonList from './MoreButtonList.jsx';
+import MoreButtonDiv from '../components/MoreButtonDiv.jsx';
 
 
 const StyledDiv = styled.div`
@@ -40,33 +40,23 @@ const LikeButton = styled.button`
   :hover {
     border-color: #ccc;
   }
-  `;
-
-const MoreButton = styled(LikeButton)`
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iNCIgdmlld0JveD0iMCAwIDE0IDQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPm1vcmU8L3RpdGxlPjxnIGZpbGw9IiMyMjIiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiLz48Y2lyY2xlIGN4PSI3IiBjeT0iMiIgcj0iMiIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMiIgcj0iMiIvPjwvZz48L3N2Zz4=);
-  position: relative;
-  margin-right: 0px;
-
-  :focus:enabled {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iNCIgdmlld0JveD0iMCAwIDE0IDQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPm1vcmU8L3RpdGxlPjxnIGZpbGw9IiNGNTAiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiLz48Y2lyY2xlIGN4PSI3IiBjeT0iMiIgcj0iMiIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMiIgcj0iMiIvPjwvZz48L3N2Zz4=);
-    border: 1px solid #f50;
+  :focus {
+    outline: none;
   }
   `;
 
 
+
+
 const TrackButtons = function(props) {
+
   return (
-    <div>
-      <StyledDiv className={"overlay_buttons"}>
-        <LikeButton title={"Like"} />
-        <MoreButton title={"More"} />
-        <MoreButtonList />
-      </StyledDiv>
-      
-    </div>
+    <StyledDiv className={"overlay_buttons"}>
+      <LikeButton title={"Like"} />
+      <MoreButtonDiv />
+    </StyledDiv>
   );
-  
 
 }
 
-export default TrackButtons
+export {TrackButtons, LikeButton};

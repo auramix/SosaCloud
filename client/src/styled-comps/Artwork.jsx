@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const ArtSpan = styled.span`
   margin-right: 4px;
-  padding: 5px 6px 5px 0px;
+  padding: 5px 6px 5px 5px;
   width: 50px;
   height: 50px;
   position: relative;
