@@ -5,6 +5,8 @@ import styled from 'styled-components';
 
 
 const StyledDiv = styled.div`
+  height: 62px;
+  width:306px;
   :hover {
     .overlay_buttons {
       visibility: visible;

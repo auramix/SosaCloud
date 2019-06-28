@@ -9,7 +9,6 @@ const ArtSpan = styled.span`
   height: 50px;
   position: relative;
   float: left;
-
 `; 
 
 

@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import MoreButtonList from './MoreButtonList.jsx';
 
+
 const StyledDiv = styled.div`
   visibility: hidden;
   background: linear-gradient(to right,rgba(255,255,255,.1),#fff 17px);
   position: absolute;
-  height: auto;
-  width: 55px;
+  height: 20px;
+  width: 60px;
   top: 18px;
-  right: 0;
-  padding: 0 10px 0 20px;
+  left: 240px;
 `;
 
 const LikeButton = styled.button`
@@ -52,9 +52,8 @@ const TrackButtons = function(props) {
       <StyledDiv className={"overlay_buttons"}>
         <LikeButton title={"Like"} />
         <MoreButton title={"More"} />
-        <MoreButtonList />
       </StyledDiv>
-      
+      <MoreButtonList />
     </div>
   );
   
