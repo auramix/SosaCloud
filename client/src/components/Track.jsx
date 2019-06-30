@@ -1,5 +1,5 @@
 import React from 'react';
-import Artwork from '../styled-comps/Artwork.jsx';
+import {Artwork} from '../styled-comps/Artwork.jsx';
 import TrackInfo from '../styled-comps/TrackInfo.jsx';
 import styled from 'styled-components';
 
@@ -24,6 +24,7 @@ export default class Track extends React.Component {
     }
     this.moreButtonHandler = this.moreButtonHandler.bind(this);
     this.globalEventListener = this.globalEventListener.bind(this);
+    this.removeGlobalListener = this.removeGlobalListener.bind(this);
   }
 
   moreButtonHandler() {
@@ -32,7 +33,20 @@ export default class Track extends React.Component {
   };
 
   globalEventListener() {
-    document.body.addEventListener('click', e => this.setState({moreClicked: false}));
+    document.body.addEventListener('click', e => {
+      if (e.target.id !== 'more-btn') {
+        this.setState({moreClicked: false});
+      }
+      this.removeGlobalListener();
+    });
+  }
+
+  removeGlobalListener() {
+    document.body.removeEventListener('click', e => {
+      if (e.target.id !== 'more-btn') {
+        this.setState({moreClicked: false});
+      }
+    })
   }
 
   render() {

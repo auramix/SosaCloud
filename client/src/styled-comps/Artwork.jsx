@@ -80,4 +80,4 @@ const Artwork = (props) => {
 
 }
 
-export default Artwork;
+export {Artwork, ImageSpan};
