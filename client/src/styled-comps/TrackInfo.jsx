@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import TrackInteractions from './TrackInteractions.jsx'
 import {TrackButtons} from './TrackButtons.jsx';
+import {ArtistPopUp}  from './ArtistPopUp.jsx';
 
 
 const TrackInfoDiv = styled.div`
@@ -17,14 +18,19 @@ const TrackInfoDiv = styled.div`
 `; 
 
 const ArtistAnchor = styled(TrackInfoDiv)`
+  position: realtive;
   color: #999;
   margin: 5px 5px 2px 0px;
   :hover {
     color: #333;
+    .artist-pop-up {
+      visibility: visible;
+    }
   }
 `;
 
 const TrackNameAnchor = styled(TrackInfoDiv)`
+  position: relative;
   color: #333;
   margin: 2px 5px 1px 0px;
   line-height: 1.3em;
@@ -34,13 +40,18 @@ const TrackNameAnchor = styled(TrackInfoDiv)`
 const TrackInfo = function(props) {
   return (
     <TrackInfoDiv>
-      <ArtistAnchor as="a" href={""}>
-        <span>Artist</span>
-      </ArtistAnchor>
+      <div>
+        <ArtistAnchor as="a" href={""}>
+          <span>Artist</span>
+          <ArtistPopUp imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"}/>
+        </ArtistAnchor>
+      </div>
 
-      <TrackNameAnchor as="a" href={""}>
-        Track Name
-      </TrackNameAnchor>
+      <div>
+        <TrackNameAnchor as="a" href={""}>
+          Track Name
+        </TrackNameAnchor>
+      </div>
 
       <TrackInteractions />
       <TrackButtons clickHandler={props.clickHandler} clicked={props.clicked}/>

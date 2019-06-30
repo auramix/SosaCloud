@@ -54,7 +54,7 @@ export default class Track extends React.Component {
       <li>
         <StyledDiv >
           <Artwork imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"} clicked={this.state.moreClicked}/>
-          <TrackInfo clicked={this.state.moreClicked} clickHandler={this.moreButtonHandler}/>  
+          <TrackInfo clicked={this.state.moreClicked} clickHandler={this.moreButtonHandler} imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"}/>  
         </StyledDiv>
       </li>
     );
