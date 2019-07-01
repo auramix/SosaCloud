@@ -54,7 +54,7 @@ const TrackInfo = function (props) {
       </div>
 
       <TrackInteractions />
-      <TrackButtons clickHandler={props.clickHandler} clicked={props.clicked} />
+      <TrackButtons moreClickHandler={props.moreClickHandler} moreClicked={props.moreClicked} likeClicked={props.likeClicked} likeClickHandler={props.likeClickHandler} />
     </TrackInfoDiv>
   )
 }

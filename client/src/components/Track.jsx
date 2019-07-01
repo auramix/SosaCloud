@@ -21,9 +21,11 @@ export default class Track extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      moreClicked: false
+      moreClicked: false,
+      likeClicked: false
     }
     this.moreButtonHandler = this.moreButtonHandler.bind(this);
+    this.likeButtonHandler = this.likeButtonHandler.bind(this);
     this.globalEventListener = this.globalEventListener.bind(this);
     this.removeGlobalListener = this.removeGlobalListener.bind(this);
   }
@@ -32,6 +34,10 @@ export default class Track extends React.Component {
     this.setState({ moreClicked: !this.state.moreClicked });
     this.globalEventListener();
   };
+
+  likeButtonHandler() {
+    this.setState({ likeClicked: !this.state.likeClicked });
+  }
 
   globalEventListener() {
     document.body.addEventListener('click', e => {
@@ -54,8 +60,8 @@ export default class Track extends React.Component {
     return (
       <li>
         <StyledDiv >
-          <Artwork imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"} clicked={this.state.moreClicked} />
-          <TrackInfo clicked={this.state.moreClicked} clickHandler={this.moreButtonHandler} imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"} />
+          <Artwork imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"} />
+          <TrackInfo moreClicked={this.state.moreClicked} moreClickHandler={this.moreButtonHandler} imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"} likeClicked={this.state.likeClicked} likeClickHandler={this.likeButtonHandler} />
         </StyledDiv>
       </li>
     );

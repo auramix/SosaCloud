@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ArtistAnchor } from './TrackInfo.jsx'
 import { List, Like } from './TrackInteractions.jsx'
 
 const PopUpDiv = styled.div`
   visibility: hidden;
   position: absolute;
+  
   background-color: #fff;
   width: 150px;
   min-height: 199px;
@@ -14,9 +14,7 @@ const PopUpDiv = styled.div`
   border: 1px solid #ccc;
   box-shadow: 0 2px 10px rgba(0,0,0,.1);
   text-align: center;
-  :focus {
-    visibility: visible;
-  }
+  
   z-index: 1;
 `;
 
@@ -35,27 +33,85 @@ const ArtistImage = styled.span`
   width 80px;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, .1) 0 0 0 1px inset;
+  cursor: pointer;
 `;
 
-const FollowerCountAnchor = styled.a`
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  ::before {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCI+PHBhdGggZmlsbD0icmdiYSgxNTMsIDE1MywgMTUzLCAwLjcpIiBkPSJNMTguNCAxOC41bDIuNSA1IC4yLjVIMjhsLTIuMS00LjMtNC4xLTEuNXYtMi41YzEuMi0xLjEgMS44LTMuMiAxLjgtNS4xIDAtMi4xLTItMy42LTMuNS0zLjZzLTMuNSAxLjYtMy41IDMuNmMwIDEuOS41IDQgMS44IDUuMXYyLjVoLS4xbC4xLjN6Ii8+PHBhdGggZmlsbD0iIzk5OSIgZD0iTTE3LjUgMTlsLTUtMS44di0zYzEuNC0xLjIgMi0zLjggMi01LjkgMC0yLjQtMi4zLTQuMy00LTQuMy0xLjcgMC00IDEuOC00IDQuMyAwIDIuMi42IDQuNyAyIDUuOXYzbC01IDEuOEwxIDI0aDE5bC0yLjUtNXoiLz48L3N2Zz4=);
-    background-size: contain;
+const ArtistAnchor = styled.div`
+  position: realtive;
+  height: 19px;
+  font-color: #333;
+  cursor: pointer;
+  :hover {
+    color: black;
   }
 `;
 
-const LocationDiv = styled.div`
-  position: relative;
+const FollowerCountAnchor = styled.div`
+  display: inline-block;
+  height: 22px;
+  margin-right: 9px;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  color: #ccc;
+  font-size: 11px;
+  line-height: 12px;
+  font-family: "InterstateSound Tnum","Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 100;
+  text-decoration: none;
+  cursor: pointer;
+
+  ::before {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCI+PHBhdGggZmlsbD0icmdiYSgxNTMsIDE1MywgMTUzLCAwLjcpIiBkPSJNMTguNCAxOC41bDIuNSA1IC4yLjVIMjhsLTIuMS00LjMtNC4xLTEuNXYtMi41YzEuMi0xLjEgMS44LTMuMiAxLjgtNS4xIDAtMi4xLTItMy42LTMuNS0zLjZzLTMuNSAxLjYtMy41IDMuNmMwIDEuOS41IDQgMS44IDUuMXYyLjVoLS4xbC4xLjN6Ii8+PHBhdGggZmlsbD0iIzk5OSIgZD0iTTE3LjUgMTlsLTUtMS44di0zYzEuNC0xLjIgMi0zLjggMi01LjkgMC0yLjQtMi4zLTQuMy00LTQuMy0xLjcgMC00IDEuOC00IDQuMyAwIDIuMi42IDQuNyAyIDUuOXYzbC01IDEuOEwxIDI0aDE5bC0yLjUtNXoiLz48L3N2Zz4=);
+    background-size: contain;
+    display: inline-block;
+    margin-right: 5px;
+    content: "";
+    width: 16px;
+    height: 18px;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+`;
+
+const Location = styled.p`
+  display: block;
+  line-height: 16.8px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  cursor: text;
+`;
+
+const StyledSpan = styled.span`
+  display: inline-block;
+  margin-top: 5px;
+  height: auto;
+  color: #333;
+  :hover {
+    color: black;
+  }
+`;
+
+const FollowerSpan = styled(StyledSpan)`
+  color: #999;
+  :hover{
+    color: #333;
+  }
 `;
 
 const FollowButton = styled.button`
+  margin-top: 5px;
+  height: 22px;
+  padding: 2px 9px 2px 8px;
+  border-radius: 3px;
   border: 1px solid #e5e5e5;
-  border-color: #ccc;
   height: auto;
   width: auto;
+  cursor: pointer;
+
+  :hover{
+    border-color: #ccc;
+  }
 `;
 
 const BoxArrow = styled.div`
@@ -79,27 +135,28 @@ const ArtistPopUp = function (props) {
 
   return (
     <PopUpDiv className={"artist-pop-up"}>
+      <div style={{ cursor: "default" }}>
+        <ArtistImageDiv>
+          <ArtistImage imageUrl={props.imageUrl} />
+        </ArtistImageDiv>
 
-      <ArtistImageDiv>
-        <ArtistImage imageUrl={props.imageUrl} />
-      </ArtistImageDiv>
+        <div>
+          <ArtistAnchor>
+            <StyledSpan >Artist</StyledSpan>
+          </ArtistAnchor>
+        </div>
 
-      <div>
-        <ArtistAnchor>
-          <span>Artist</span>
-        </ArtistAnchor>
+        <div>
+          <FollowerCountAnchor>
+            <FollowerSpan>123</FollowerSpan>
+          </FollowerCountAnchor>
+        </div>
+
+        <div style={{ position: 'relative', color: '#999' }}>
+          <Location>San Francisco</Location>
+        </div>
+        <FollowButton type={"button"}>Follow</FollowButton>
       </div>
-
-      <div>
-        <FollowerCountAnchor>
-          <span>123</span>
-        </FollowerCountAnchor>
-      </div>
-
-      <LocationDiv>
-        <p>San Francisco</p>
-      </LocationDiv>
-      <FollowButton>Follow</FollowButton>
       <BoxArrow />
     </PopUpDiv>
   );
