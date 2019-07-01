@@ -42,18 +42,18 @@ const TrackInfo = function (props) {
     <TrackInfoDiv>
       <div>
         <ArtistAnchor as="a" href={""}>
-          <span>Artist</span>
-          <ArtistPopUp imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"} />
+          <span>{props.track.artistName}</span>
+          <ArtistPopUp imageUrl={props.imageUrl} />
         </ArtistAnchor>
       </div>
 
       <div>
         <TrackNameAnchor as="a" href={""}>
-          Track Name
+          {props.track.trackName}
         </TrackNameAnchor>
       </div>
 
-      <TrackInteractions />
+      <TrackInteractions track={props.track} />
       <TrackButtons moreClickHandler={props.moreClickHandler} moreClicked={props.moreClicked} likeClicked={props.likeClicked} likeClickHandler={props.likeClickHandler} />
     </TrackInfoDiv>
   )

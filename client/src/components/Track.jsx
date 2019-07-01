@@ -60,8 +60,8 @@ export default class Track extends React.Component {
     return (
       <li>
         <StyledDiv >
-          <Artwork imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"} />
-          <TrackInfo moreClicked={this.state.moreClicked} moreClickHandler={this.moreButtonHandler} imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"} likeClicked={this.state.likeClicked} likeClickHandler={this.likeButtonHandler} />
+          <Artwork imageUrl={props.track.trackImgUrl} />
+          <TrackInfo track={props.track} moreClicked={this.state.moreClicked} moreClickHandler={this.moreButtonHandler} imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"} likeClicked={this.state.likeClicked} likeClickHandler={this.likeButtonHandler} />
         </StyledDiv>
       </li>
     );

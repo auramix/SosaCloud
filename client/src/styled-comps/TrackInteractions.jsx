@@ -66,10 +66,10 @@ const TrackInteractions = function (props) {
   return (
     <div>
       <List>
-        <li><Play><span>241</span></Play></li>
+        <li><Play><span>{props.track.numPlays}</span></Play></li>
         <li><Like href={""}><span>19</span></Like></li>
-        <li><Repost href={""}><span>4</span></Repost></li>
-        <li><Comment href={""}><span>2</span></Comment></li>
+        <li><Repost href={""}><span>{props.track.numReposts}</span></Repost></li>
+        <li><Comment href={""}><span>{props.track.numComments}</span></Comment></li>
       </List>
     </div>
   )

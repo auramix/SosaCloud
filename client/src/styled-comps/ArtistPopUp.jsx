@@ -7,7 +7,8 @@ const PopUpDiv = styled.div`
   position: absolute;
   
   background-color: #fff;
-  width: 150px;
+  width: auto;
+  min-width: 135px;
   min-height: 199px;
   border-radius: 4px;
   padding: 10px;
