@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import TrackInteractions from './TrackInteractions.jsx'
-import {TrackButtons} from './TrackButtons.jsx';
-import {ArtistPopUp}  from './ArtistPopUp.jsx';
+import { TrackInteractions } from './TrackInteractions.jsx'
+import { TrackButtons } from './TrackButtons.jsx';
+import { ArtistPopUp } from './ArtistPopUp.jsx';
 
 
 const TrackInfoDiv = styled.div`
@@ -15,7 +15,7 @@ const TrackInfoDiv = styled.div`
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
-`; 
+`;
 
 const ArtistAnchor = styled(TrackInfoDiv)`
   position: realtive;
@@ -35,15 +35,15 @@ const TrackNameAnchor = styled(TrackInfoDiv)`
   margin: 2px 5px 1px 0px;
   line-height: 1.3em;
   font-weight: 50%;
-`; 
+`;
 
-const TrackInfo = function(props) {
+const TrackInfo = function (props) {
   return (
     <TrackInfoDiv>
       <div>
         <ArtistAnchor as="a" href={""}>
           <span>Artist</span>
-          <ArtistPopUp imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"}/>
+          <ArtistPopUp imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"} />
         </ArtistAnchor>
       </div>
 
@@ -54,9 +54,9 @@ const TrackInfo = function(props) {
       </div>
 
       <TrackInteractions />
-      <TrackButtons clickHandler={props.clickHandler} clicked={props.clicked}/>
+      <TrackButtons clickHandler={props.clickHandler} clicked={props.clicked} />
     </TrackInfoDiv>
   )
 }
 
-export default TrackInfo;
+export { ArtistAnchor, TrackInfo };

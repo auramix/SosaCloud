@@ -41,7 +41,7 @@ const Play = styled.a`
   }
 `;
 
-const Like = styled(Play) `
+const Like = styled(Play)`
 :hover {
   color: #333;
 }
@@ -50,29 +50,29 @@ const Like = styled(Play) `
 }
 
 `;
-const Repost = styled(Like) `
+const Repost = styled(Like)`
 ::before {
   background-size: 16px 16px;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+c3RhdHNfcmVwb3N0PC90aXRsZT48cGF0aCBkPSJNMiA2djVjMCAxLjEwNS45MDIgMiAyLjAwOSAyaDYuOTg3SDEwbC0yLTJINFY2aC0uNUg2TDMgMyAwIDZoMnptNC0zaC0uOTk2IDYuOTg3QzEzLjA5OCAzIDE0IDMuODk1IDE0IDV2NWgtMlY1SDhMNiAzem0xMCA3aC02bDMgMyAzLTN6IiBmaWxsPSIjOTk5IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=)
 `;
-const Comment = styled(Like) `
+const Comment = styled(Like)`
 ::before {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+c3RhdHNfY29tbWVudDwvdGl0bGU+PHBhdGggZD0iTTUgM2MtMS4xMDUgMC0yIC44ODctMiAyLjAwNnYyLjk4OEMzIDkuMTAyIDMuODg3IDEwIDUgMTBoNmMxLjEwNSAwIDItLjg4NyAyLTIuMDA2VjUuMDA2QTEuOTk4IDEuOTk4IDAgMCAwIDExIDNINXptMCA3djNsMy0zSDV6IiBmaWxsPSIjOTk5IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
 }
 `;
 
 
-const TrackInteractions = function(props) {
+const TrackInteractions = function (props) {
   return (
     <div>
       <List>
-      <li><Play><span>241</span></Play></li>
-      <li><Like href={""}><span>19</span></Like></li>
-      <li><Repost href={""}><span>4</span></Repost></li>
-      <li><Comment href={""}><span>2</span></Comment></li>
-    </List>
-    </div> 
+        <li><Play><span>241</span></Play></li>
+        <li><Like href={""}><span>19</span></Like></li>
+        <li><Repost href={""}><span>4</span></Repost></li>
+        <li><Comment href={""}><span>2</span></Comment></li>
+      </List>
+    </div>
   )
 }
 
-export default TrackInteractions;
+export { TrackInteractions, List, Like };
