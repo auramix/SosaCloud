@@ -65,7 +65,7 @@ const Comment = styled(Like)`
 const TrackInteractions = function (props) {
   return (
     <div>
-      <List>
+      <List id={"interactive-list"}>
         <li><Play><span>{props.track.numPlays}</span></Play></li>
         <li><Like href={""}><span>19</span></Like></li>
         <li><Repost href={""}><span>{props.track.numReposts}</span></Repost></li>
