@@ -6,7 +6,7 @@ const getRandomUser = function () {
   let randomIdx = Math.floor(Math.random() * 100);
   return users[randomIdx];
 }
-for (let i = 0; i < 99; i++) {
+for (let i = 0; i < 100; i++) {
   users.push(faker.internet.userName());
 }
 
@@ -29,7 +29,7 @@ let createTracksData = function (qty) {
 let createUsersData = function (qty) {
   let data = '';
   for (var i = 0; i < qty; i++) {
-    data += `${getRandomUser()},, ${faker.address.city() + ', ' + faker.address.country()},, ${imageUrl()},, ${rnd(1000000)}\n`
+    data += `${users[i]},, ${faker.address.city() + ', ' + faker.address.country()},, ${imageUrl()},, ${rnd(1000000)}\n`
   }
   return data.slice(0, -1);
 }

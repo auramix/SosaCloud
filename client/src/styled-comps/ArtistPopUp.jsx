@@ -134,11 +134,33 @@ const BoxArrow = styled.div`
 export default class ArtistPopUp extends React.Component {
   constructor(props) {
     super(props);
-    this.getArtistInfo = this.getArtistInfo.bind(this);
+    this.state = {
+      user: '',
+      location: '',
+      followerCount: 0,
+      userImageUrl: ''
+    }
   }
 
-  getArtistInfo() {
-
+  componentDidMount() {
+    let userName = this.props.user_name.trim();
+    fetch(`/api/user/${userName}`, {
+      method: 'GET'
+    })
+      .then((data) => {
+        return data.json();
+      })
+      .then((jsonData) => {
+        this.setState({
+          user: jsonData[0].userName,
+          location: jsonData[0].userLocation,
+          followerCount: jsonData[0].numFollowers,
+          userImageUrl: jsonData[0].userImgUrl
+        })
+      })
+      .catch((err) => {
+        console.log('***Database Error - ArtistPopUp element***, ', err);
+      })
   }
 
   render() {
@@ -146,23 +168,23 @@ export default class ArtistPopUp extends React.Component {
       <PopUpDiv className={"artist-pop-up"}>
         <div style={{ cursor: "default" }}>
           <ArtistImageDiv>
-            <ArtistImage imageUrl={props.imageUrl} />
+            <ArtistImage imageUrl={this.state.userImageUrl} />
           </ArtistImageDiv>
 
           <div>
             <ArtistAnchor>
-              <StyledSpan >Artist</StyledSpan>
+              <StyledSpan >{this.state.user}</StyledSpan>
             </ArtistAnchor>
           </div>
 
           <div>
             <FollowerCountAnchor>
-              <FollowerSpan>123</FollowerSpan>
+              <FollowerSpan>{this.state.followerCount}</FollowerSpan>
             </FollowerCountAnchor>
           </div>
 
           <div style={{ position: 'relative', color: '#999' }}>
-            <Location>San Francisco</Location>
+            <Location>{this.state.location}</Location>
           </div>
           <FollowButton type={"button"}>Follow</FollowButton>
         </div>

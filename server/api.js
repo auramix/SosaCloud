@@ -7,4 +7,11 @@ const getRelatedTracks = function (id, callbk) {
   })
 }
 
+const getUserInfo = function (userName, callbk) {
+  db.connection.query('SELECT * FROM `users` WHERE `userName`= ? LIMIT 1', [userName], (err, results) => {
+    callbk(err, results);
+  })
+}
+
 exports.getRelatedTracks = getRelatedTracks;
+exports.getUserInfo = getUserInfo;

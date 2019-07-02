@@ -21,6 +21,7 @@ const ArtistAnchor = styled(TrackInfoDiv)`
   position: realtive;
   color: #999;
   margin: 5px 5px 2px 0px;
+  white-space: nowrap;
   :hover {
     color: #333;
     .artist-pop-up {
@@ -35,6 +36,7 @@ const TrackNameAnchor = styled(TrackInfoDiv)`
   margin: 2px 5px 1px 0px;
   line-height: 1.3em;
   font-weight: 50%;
+  white-space: nowrap;
 `;
 
 const TrackInfo = function (props) {
@@ -44,7 +46,7 @@ const TrackInfo = function (props) {
       <div>
         <ArtistAnchor as="a" href={""}>
           <span>{props.track.artistName}</span>
-          <ArtistPopUp imageUrl={props.imageUrl} />
+          <ArtistPopUp imageUrl={props.imageUrl} user_name={props.track.artistName} />
         </ArtistAnchor>
       </div>
 
