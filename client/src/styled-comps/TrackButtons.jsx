@@ -11,8 +11,9 @@ const StyledDiv = styled.div`
   position: absolute;
   height: 20px;
   width: 60px;
-  top: 18px;
   left: 240px;
+  padding-top: 18px;
+  z-index: 2;
 `;
 
 const LikeButton = styled.button`

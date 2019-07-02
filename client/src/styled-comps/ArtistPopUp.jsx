@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { List, Like } from './TrackInteractions.jsx'
 
 const PopUpDiv = styled.div`
   visibility: hidden;
@@ -132,35 +131,45 @@ const BoxArrow = styled.div`
   z-index: 1; 
 `;
 
-const ArtistPopUp = function (props) {
+export default class ArtistPopUp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.getArtistInfo = this.getArtistInfo.bind(this);
+  }
 
-  return (
-    <PopUpDiv className={"artist-pop-up"}>
-      <div style={{ cursor: "default" }}>
-        <ArtistImageDiv>
-          <ArtistImage imageUrl={props.imageUrl} />
-        </ArtistImageDiv>
+  getArtistInfo() {
 
-        <div>
-          <ArtistAnchor>
-            <StyledSpan >Artist</StyledSpan>
-          </ArtistAnchor>
+  }
+
+  render() {
+    return (
+      <PopUpDiv className={"artist-pop-up"}>
+        <div style={{ cursor: "default" }}>
+          <ArtistImageDiv>
+            <ArtistImage imageUrl={props.imageUrl} />
+          </ArtistImageDiv>
+
+          <div>
+            <ArtistAnchor>
+              <StyledSpan >Artist</StyledSpan>
+            </ArtistAnchor>
+          </div>
+
+          <div>
+            <FollowerCountAnchor>
+              <FollowerSpan>123</FollowerSpan>
+            </FollowerCountAnchor>
+          </div>
+
+          <div style={{ position: 'relative', color: '#999' }}>
+            <Location>San Francisco</Location>
+          </div>
+          <FollowButton type={"button"}>Follow</FollowButton>
         </div>
-
-        <div>
-          <FollowerCountAnchor>
-            <FollowerSpan>123</FollowerSpan>
-          </FollowerCountAnchor>
-        </div>
-
-        <div style={{ position: 'relative', color: '#999' }}>
-          <Location>San Francisco</Location>
-        </div>
-        <FollowButton type={"button"}>Follow</FollowButton>
-      </div>
-      <BoxArrow />
-    </PopUpDiv>
-  );
+        <BoxArrow />
+      </PopUpDiv>
+    )
+  };
 
 }
 
