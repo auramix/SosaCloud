@@ -40,6 +40,7 @@ const TrackNameAnchor = styled(TrackInfoDiv)`
 const TrackInfo = function (props) {
   return (
     <TrackInfoDiv>
+      <TrackButtons moreClickHandler={props.moreClickHandler} moreClicked={props.moreClicked} likeClicked={props.likeClicked} likeClickHandler={props.likeClickHandler} />
       <div>
         <ArtistAnchor as="a" href={""}>
           <span>{props.track.artistName}</span>
@@ -54,7 +55,6 @@ const TrackInfo = function (props) {
       </div>
 
       <TrackInteractions track={props.track} />
-      <TrackButtons moreClickHandler={props.moreClickHandler} moreClicked={props.moreClicked} likeClicked={props.likeClicked} likeClickHandler={props.likeClickHandler} />
     </TrackInfoDiv>
   )
 }
