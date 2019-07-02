@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Track from './components/Track.jsx';
 import RelatedTrackList from './styled-comps/RelatedTrackList.jsx';
 import styled from 'styled-components';
-//import api from '../../server/api.js';
 
 const PageDiv = styled.div`
   background-color: #EEE;
@@ -28,20 +27,24 @@ class App extends React.Component {
     this.state = { relatedTracks: [] };
   }
 
-  // componentDidMount() {
-  //   let randomId = Math.ceil(Math.random() * 100);
-  //   api.getRelatedTracks(dandomId, (err, results) => {
-  //     if (err) {
-  //       console.log('*** No tracks returned ***');
-  //     } else {
-  //       this.setState({ relatedTracks: results });
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    let randomId = Math.ceil(Math.random() * 100);
+    fetch(`/api/track/${randomId}`, {
+      method: 'GET'
+    })
+      .then((data) => {
+        return data.json();
+      })
+      .then((jsonData) => this.setState({ relatedTracks: jsonData }))
+      .catch((err) => {
+        console.log('***Database Error***, ', err);
+      })
+  }
 
 
   render() {
-    let relatedTracks = this.state.relatedTracks.map(track => <Track track={track} />);
+    let relatedTracks = this.state.relatedTracks;
+    relatedTracks = relatedTracks.map(track => <Track key={track.id} track={track} />);
     return (
       <PageDiv>
         <Sidebar>
