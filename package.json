@@ -21,6 +21,11 @@
   },
   "homepage": "https://github.com/sosacloud/sidebar-views#readme",
   "jest": {
+    "collectCoverageFrom": [
+      "**/*.{}js,jsx",
+      "!**/node_modules/**"
+    ],
+    "coverageDirectory": "./test_coverage",
     "setupFilesAfterEnv": [
       "jest-enzyme"
     ],

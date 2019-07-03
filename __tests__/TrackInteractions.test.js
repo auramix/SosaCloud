@@ -13,8 +13,10 @@ describe('TrackInteractions', () => {
   });
 
   it('Play button renders text from props', () => {
-    const trackInteractions = shallow(<TrackInteractions track={{ numPlays: 5 }} />);
+    const trackInteractions = shallow(<TrackInteractions track={{ numPlays: 5, numReposts: 10, numComments: 15 }} />);
 
     expect(trackInteractions.find('span').at(0).text()).toEqual('5');
+    expect(trackInteractions.find('span').at(2).text()).toEqual('10');
+    expect(trackInteractions.find('span').at(3).text()).toEqual('15');
   });
 });
