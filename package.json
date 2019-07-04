@@ -5,7 +5,7 @@
   "main": "./server/index.js",
   "scripts": {
     "test": "jest",
-    "server": "nodemon ./server/index.js",
+    "server": "nodemon ./server/server.js",
     "react-dev": "webpack -d --watch",
     "fakeData": "node db/fakeData.js",
     "seed": "mysql -u root -p < db/schema.sql"
@@ -34,6 +34,7 @@
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "mysql": "^2.17.1",
@@ -54,7 +55,9 @@
     "jest": "^24.8.0",
     "jest-environment-enzyme": "^7.0.2",
     "jest-enzyme": "^7.0.2",
+    "jest-styled-components": "^6.3.3",
     "react-test-renderer": "^16.8.6",
+    "supertest": "^4.0.2",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.4"
   }

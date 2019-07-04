@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const api = require('./api.js');
-const port = 3002;
+
 
 app.use(express.static(__dirname + '/../client/dist'));
 
@@ -31,6 +31,5 @@ app.get('/api/user/:user_name', (req, res) => {
   })
 })
 
-app.listen(port, () => {
-  console.log(`Now listening on ${port}. Visit http://localhost:3002/`)
-});
+module.exports = app;
+
