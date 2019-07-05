@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const PopUpDiv = styled.div`
   visibility: hidden;
   position: absolute;
+  right: ${props => (150 - props.artistName.length * 3) + 'px'};
   
   background-color: #fff;
   width: auto;
@@ -16,7 +17,7 @@ const PopUpDiv = styled.div`
   text-align: center;
   align-contents: center;
   
-  z-index: 1;
+  z-index: 3;
 `;
 
 const ArtistImageDiv = styled.div`
@@ -169,7 +170,7 @@ export default class ArtistPopUp extends React.Component {
 
   render() {
     return (
-      <PopUpDiv className={"artist-pop-up"}>
+      <PopUpDiv className={"artist-pop-up"} artistName={this.props.artistName}>
         <div style={{ cursor: "default" }}>
           <ArtistImageDiv>
             <ArtistImage imageUrl={this.state.userImageUrl} />

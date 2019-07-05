@@ -46,7 +46,7 @@ const TrackInfo = function (props) {
       <div>
         <ArtistAnchor as="a" href={""}>
           <span>{props.track.artistName}</span>
-          <ArtistPopUp imageUrl={props.imageUrl} user_name={props.track.artistName} />
+          <ArtistPopUp imageUrl={props.imageUrl} user_name={props.track.artistName} artistName={props.track.artistName} />
         </ArtistAnchor>
       </div>
 
