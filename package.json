@@ -4,7 +4,7 @@
   "description": "FEC project",
   "main": "./server/index.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --coverage --detectOpenHandles",
     "update_tests": "jest --updateSnapshot",
     "server": "nodemon ./server/server.js",
     "react-dev": "webpack -d --watch",

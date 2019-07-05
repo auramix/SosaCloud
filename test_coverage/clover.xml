@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1562363246895" clover="3.2.0">
-  <project timestamp="1562363246896" name="All files">
-    <metrics statements="375" coveredstatements="77" conditionals="376" coveredconditionals="3" methods="157" coveredmethods="16" elements="908" coveredelements="96" complexity="0" loc="375" ncloc="375" packages="9" files="24" classes="24"/>
+<coverage generated="1562365711816" clover="3.2.0">
+  <project timestamp="1562365711816" name="All files">
+    <metrics statements="375" coveredstatements="91" conditionals="376" coveredconditionals="3" methods="157" coveredmethods="17" elements="908" coveredelements="111" complexity="0" loc="375" ncloc="375" packages="9" files="24" classes="24"/>
     <package name="sidebar-views">
       <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="babel.config.js" path="/Users/scottjosephson/Desktop/Hack_Reactor/fec/sidebar-views/babel.config.js">
@@ -122,16 +122,16 @@
       </file>
     </package>
     <package name="sidebar-views.client.src.components">
-      <metrics statements="27" coveredstatements="0" conditionals="12" coveredconditionals="0" methods="12" coveredmethods="0"/>
+      <metrics statements="27" coveredstatements="4" conditionals="12" coveredconditionals="0" methods="12" coveredmethods="0"/>
       <file name="MoreButtonDiv.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/fec/sidebar-views/client/src/components/MoreButtonDiv.jsx">
-        <metrics statements="9" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
+        <metrics statements="9" coveredstatements="4" conditionals="8" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
         <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="42" count="0" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
         <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="45" count="0" type="stmt"/>
       </file>
@@ -158,7 +158,7 @@
       </file>
     </package>
     <package name="sidebar-views.client.src.styled-comps">
-      <metrics statements="67" coveredstatements="45" conditionals="8" coveredconditionals="0" methods="19" coveredmethods="7"/>
+      <metrics statements="67" coveredstatements="55" conditionals="8" coveredconditionals="0" methods="19" coveredmethods="8"/>
       <file name="AnchorRelatedTracks.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/fec/sidebar-views/client/src/styled-comps/AnchorRelatedTracks.jsx">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="1" type="stmt"/>
@@ -171,18 +171,18 @@
       </file>
       <file name="ArtistPopUp.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/fec/sidebar-views/client/src/styled-comps/ArtistPopUp.jsx">
         <metrics statements="20" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="3"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="79" count="1" type="stmt"/>
-        <line num="90" count="1" type="stmt"/>
-        <line num="100" count="1" type="stmt"/>
-        <line num="107" count="1" type="stmt"/>
-        <line num="122" count="1" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="79" count="2" type="stmt"/>
+        <line num="90" count="2" type="stmt"/>
+        <line num="100" count="2" type="stmt"/>
+        <line num="107" count="2" type="stmt"/>
+        <line num="122" count="2" type="stmt"/>
         <line num="141" count="1" type="stmt"/>
         <line num="142" count="1" type="stmt"/>
         <line num="151" count="0" type="stmt"/>
@@ -205,15 +205,15 @@
       </file>
       <file name="MoreButtonList.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/fec/sidebar-views/client/src/styled-comps/MoreButtonList.jsx">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="56" count="1" type="stmt"/>
-        <line num="61" count="1" type="stmt"/>
-        <line num="66" count="1" type="stmt"/>
-        <line num="71" count="1" type="stmt"/>
-        <line num="76" count="1" type="stmt"/>
-        <line num="83" count="1" type="stmt"/>
-        <line num="91" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="61" count="2" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="71" count="2" type="stmt"/>
+        <line num="76" count="2" type="stmt"/>
+        <line num="83" count="2" type="stmt"/>
+        <line num="91" count="2" type="stmt"/>
         <line num="92" count="2" type="stmt"/>
       </file>
       <file name="RelatedTrackList.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/fec/sidebar-views/client/src/styled-comps/RelatedTrackList.jsx">
@@ -221,33 +221,33 @@
         <line num="4" count="1" type="stmt"/>
       </file>
       <file name="TrackButtons.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/fec/sidebar-views/client/src/styled-comps/TrackButtons.jsx">
-        <metrics statements="9" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
+        <metrics statements="9" coveredstatements="5" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
         <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="19" count="0" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
         <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="44" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="54" count="0" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
       </file>
       <file name="TrackInfo.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/fec/sidebar-views/client/src/styled-comps/TrackInfo.jsx">
-        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
       </file>
       <file name="TrackInteractions.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/fec/sidebar-views/client/src/styled-comps/TrackInteractions.jsx">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="58" count="1" type="stmt"/>
-        <line num="65" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="65" count="2" type="stmt"/>
         <line num="66" count="2" type="stmt"/>
       </file>
     </package>
