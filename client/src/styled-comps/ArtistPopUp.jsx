@@ -195,6 +195,6 @@ export default class ArtistPopUp extends React.Component {
 
 }
 
-export { ArtistPopUp };
+export { ArtistPopUp, PopUpDiv, ArtistAnchor };
 
 

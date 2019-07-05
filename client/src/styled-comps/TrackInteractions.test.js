@@ -1,8 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import { shallow } from 'enzyme';
-import { TrackInteractions } from '../client/src/styled-comps/TrackInteractions.jsx';
-import { List } from '../client/src/styled-comps/TrackInteractions.jsx';
+import { TrackInteractions } from './TrackInteractions.jsx';
 
 
 describe('TrackInteractions', () => {

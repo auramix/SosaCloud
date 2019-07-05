@@ -4,7 +4,7 @@
   "description": "FEC project",
   "main": "./server/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "server": "nodemon ./server/server.js",
     "react-dev": "webpack -d --watch",
     "fakeData": "node db/fakeData.js",
