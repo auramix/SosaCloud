@@ -2,7 +2,6 @@ import React from 'react';
 import expect from 'expect';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { shallow } from 'enzyme';
 import { ArtistPopUp, PopUpDiv, ArtistAnchor } from './ArtistPopUp.jsx';
 
 describe('ArtistPopUp', () => {
@@ -15,10 +14,9 @@ describe('ArtistPopUp', () => {
 
   // Snapshot test
   it('Has expected snapshot output', () => {
-    const component = renderer.create(
-      <PopUpDiv />
+    const wrapper = shallow(
+      <PopUpDiv artistName={"testname"} />
     );
-    let wrapper = component.toJSON();
     expect(wrapper).toMatchSnapshot();
   })
 
@@ -26,7 +24,7 @@ describe('ArtistPopUp', () => {
 
 describe('PopUpDiv', () => {
   it('Has a visibility property', () => {
-    const wrapper = renderer.create(<PopUpDiv />).toJSON()
+    const wrapper = renderer.create(<PopUpDiv artistName={"testname"} />).toJSON()
     expect(wrapper).toHaveStyleRule('visibility', 'hidden');
   });
 });

@@ -1,9 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ArtistPopUp Has expected snapshot output 1`] = `
-.c0 {
+<StyledComponent
+  artistName="testname"
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": false,
+        "rules": Array [
+          "
   visibility: hidden;
   position: absolute;
+  right: ",
+          [Function],
+          ";
+  
   background-color: #fff;
   width: auto;
   min-width: 135px;
@@ -13,10 +27,22 @@ exports[`ArtistPopUp Has expected snapshot output 1`] = `
   border: 1px solid #ccc;
   box-shadow: 0 2px 10px rgba(0,0,0,.1);
   text-align: center;
-  z-index: 1;
-}
-
-<div
-  className="c0"
+  align-contents: center;
+  
+  z-index: 3;
+",
+        ],
+      },
+      "displayName": "styled.div",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": "div",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
 />
 `;

@@ -5,6 +5,7 @@
   "main": "./server/index.js",
   "scripts": {
     "test": "jest --coverage",
+    "update_tests": "jest --updateSnapshot",
     "server": "nodemon ./server/server.js",
     "react-dev": "webpack -d --watch",
     "fakeData": "node db/fakeData.js",
@@ -21,6 +22,9 @@
   },
   "homepage": "https://github.com/sosacloud/sidebar-views#readme",
   "jest": {
+    "setupFiles": [
+      "./test/jestsetup.js"
+    ],
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**"

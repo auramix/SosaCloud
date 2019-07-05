@@ -22,6 +22,6 @@ describe('GET 3 related tracks, then take the userName and test return of user d
     response = await request(app).get(`/api/user/${username}`);
     expect(response.body).toHaveLength(1);
     expect(response.body).toBeInstanceOf(Array);
-    expect(response.body[0]).hasOwnProperty('userName').toBeTruthy();
+    expect(response.body[0]).hasOwnProperty('userName');
   })
 })

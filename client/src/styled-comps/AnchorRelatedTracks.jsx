@@ -1,7 +1,7 @@
 import React from 'React';
 import styled from 'styled-components';
 
-const ImageSpan = styled.span`
+const ImageSpan_ART = styled.span`
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCI+PHBhdGggZmlsbD0iIzk5OSIgZD0iTTUgMTJoMnY0SDV6TTIxIDEyaDJ2NGgtMnpNMTcgMTBoMnY4aC0yek05IDhoMnYxMkg5ek0xMyA1aDJ2MThoLTJ6Ii8+PC9zdmc+);
   background-size: 28px 28px;
   background-position: center center;
@@ -11,7 +11,7 @@ const ImageSpan = styled.span`
   width: 21px;
   `;
 
-const TextSpan = styled.span`
+const TextSpan_ART = styled.span`
   display: inline-block;
   font-size: 14px;
   color: #999;
@@ -28,7 +28,7 @@ const StyledH3 = styled.h3`
   margin: 0;
 `;
 
-const StyledAnchor = styled.a`
+const StyledAnchor_ART = styled.a`
   display: block;
  border-bottom: 1px solid #f2f2f2;
  height: 30px;
@@ -40,7 +40,7 @@ const StyledAnchor = styled.a`
 }
 `;
 
-const ViewAllSpan = styled(TextSpan)`
+const ViewAllSpan = styled(TextSpan_ART)`
   font-family: "InterstateSound Tnum", "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
   position: relative;
   left: 40%;
@@ -51,13 +51,13 @@ const ViewAllSpan = styled(TextSpan)`
 
 const AnchorRelatedTracks = function () {
   return (
-    <StyledAnchor href={''}>
+    <StyledAnchor_ART href={''}>
       <StyledH3>
-        <ImageSpan />
-        <TextSpan>Related tracks</TextSpan>
+        <ImageSpan_ART />
+        <TextSpan_ART>Related tracks</TextSpan_ART>
       </StyledH3>
       <ViewAllSpan className={"view-all"}>View All</ViewAllSpan>
-    </StyledAnchor>
+    </StyledAnchor_ART>
   );
 }
 
