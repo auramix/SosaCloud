@@ -15,6 +15,7 @@ const TrackInfoDiv = styled.div`
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
+  z-index: 1;
 `;
 
 const ArtistAnchor = styled(TrackInfoDiv)`

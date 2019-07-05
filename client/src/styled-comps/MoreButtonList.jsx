@@ -12,6 +12,7 @@ const StyledDiv = styled.div`
   border: 1px solid #e5e5e5;
   background: #fff;
   box-shadow: 0 2px 10px rgba(0,0,0,.1);
+  z-index: 4;
 `;
 
 const Button = styled.button`
@@ -88,7 +89,7 @@ const StyledSpan = styled.span`
 `;
 
 
-const MoreButtonList = function(props) {
+const MoreButtonList = function (props) {
   return (
     <StyledDiv className={"more-list"}>
       <RepostButton title={"Repost"}><StyledSpan>Repost</StyledSpan></RepostButton>

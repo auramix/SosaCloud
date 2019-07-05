@@ -9,7 +9,7 @@ const ArtSpan = styled.span`
   height: 50px;
   position: relative;
   float: left;
-`; 
+`;
 
 
 const ImageSpan = styled.span`
@@ -70,7 +70,7 @@ const Artwork = (props) => {
   return (
     <ArtSpan>
       <div>
-        <ImageSpan imageUrl={props.imageUrl}/>
+        <ImageSpan imageUrl={props.imageUrl} />
       </div>
       <PlayButtonSpan className={"overlay_buttons"} clicked={props.clicked}>
         <PlayButton title={"Play"}></PlayButton>
@@ -80,4 +80,4 @@ const Artwork = (props) => {
 
 }
 
-export {Artwork, ImageSpan};
+export { Artwork, ImageSpan };
