@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1562363051416" clover="3.2.0">
-  <project timestamp="1562363051416" name="All files">
-    <metrics statements="375" coveredstatements="76" conditionals="376" coveredconditionals="3" methods="157" coveredmethods="16" elements="908" coveredelements="95" complexity="0" loc="375" ncloc="375" packages="9" files="24" classes="24"/>
+<coverage generated="1562363246895" clover="3.2.0">
+  <project timestamp="1562363246896" name="All files">
+    <metrics statements="375" coveredstatements="77" conditionals="376" coveredconditionals="3" methods="157" coveredmethods="16" elements="908" coveredelements="96" complexity="0" loc="375" ncloc="375" packages="9" files="24" classes="24"/>
     <package name="sidebar-views">
       <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="babel.config.js" path="/Users/scottjosephson/Desktop/Hack_Reactor/fec/sidebar-views/babel.config.js">
@@ -158,7 +158,7 @@
       </file>
     </package>
     <package name="sidebar-views.client.src.styled-comps">
-      <metrics statements="67" coveredstatements="44" conditionals="8" coveredconditionals="0" methods="19" coveredmethods="7"/>
+      <metrics statements="67" coveredstatements="45" conditionals="8" coveredconditionals="0" methods="19" coveredmethods="7"/>
       <file name="AnchorRelatedTracks.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/fec/sidebar-views/client/src/styled-comps/AnchorRelatedTracks.jsx">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="1" type="stmt"/>
@@ -217,8 +217,8 @@
         <line num="92" count="2" type="stmt"/>
       </file>
       <file name="RelatedTrackList.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/fec/sidebar-views/client/src/styled-comps/RelatedTrackList.jsx">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="4" count="0" type="stmt"/>
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
       </file>
       <file name="TrackButtons.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/fec/sidebar-views/client/src/styled-comps/TrackButtons.jsx">
         <metrics statements="9" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="0"/>
