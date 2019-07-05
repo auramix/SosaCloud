@@ -20,8 +20,6 @@ const MoreButton = styled.button`
   background-image: ${props => props.clicked ? orangeBackground : greyBackground};
   border: ${props => props.clicked ? '1px solid #f50' : '1px solid #e5e5e5'};
   
-
-
   content: "";
   display: inline-block;
   position: relative;
@@ -30,6 +28,7 @@ const MoreButton = styled.button`
   width: 20px;
   height: 20px;
   margin-right: 5px;
+  z-index: 2;
 
   :hover {
     border-color: ${props => props.clicked ? '1px solid #f50' : '#ccc'};
@@ -39,13 +38,10 @@ const MoreButton = styled.button`
   }
   `;
 
-const MoreButtonDiv = function(props) {
-  let moreDropDown = props.clicked ? <MoreButtonList /> : null;
-  
+const MoreButtonDiv = function (props) {
   return (
     <div>
-      <MoreButton id={"more-btn"} title={"More"} clicked={props.clicked} onClick={props.clickHandler}/>
-      {moreDropDown}
+      <MoreButton id={"more-btn"} title={"More"} clicked={props.clicked} onClick={props.clickHandler} />
     </div>
   )
 }

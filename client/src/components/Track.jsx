@@ -4,6 +4,7 @@ import { TrackInfo } from '../styled-comps/TrackInfo.jsx';
 import styled from 'styled-components';
 
 
+
 const StyledDiv = styled.div`
   height: 62px;
   width:306px;

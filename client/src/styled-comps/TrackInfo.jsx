@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { TrackInteractions } from './TrackInteractions.jsx'
 import { TrackButtons } from './TrackButtons.jsx';
 import { ArtistPopUp } from './ArtistPopUp.jsx';
+import MoreButtonList from './MoreButtonList.jsx';
 
 
 const TrackInfoDiv = styled.div`
@@ -41,6 +42,8 @@ const TrackNameAnchor = styled(TrackInfoDiv)`
 `;
 
 const TrackInfo = function (props) {
+  let moreDropDown = props.moreClicked ? <MoreButtonList /> : null;
+
   return (
     <TrackInfoDiv>
       <TrackButtons moreClickHandler={props.moreClickHandler} moreClicked={props.moreClicked} likeClicked={props.likeClicked} likeClickHandler={props.likeClickHandler} />
@@ -56,6 +59,7 @@ const TrackInfo = function (props) {
           {props.track.trackName}
         </TrackNameAnchor>
       </div>
+      {moreDropDown}
 
       <TrackInteractions track={props.track} />
     </TrackInfoDiv>
