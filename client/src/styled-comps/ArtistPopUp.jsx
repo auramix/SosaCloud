@@ -14,6 +14,7 @@ const PopUpDiv = styled.div`
   border: 1px solid #ccc;
   box-shadow: 0 2px 10px rgba(0,0,0,.1);
   text-align: center;
+  align-contents: center;
   
   z-index: 1;
 `;
@@ -75,11 +76,14 @@ const FollowerCountAnchor = styled.div`
 `;
 
 const Location = styled.p`
-  display: block;
+  width: 150px;
   line-height: 16.8px;
   margin-bottom: 10px;
   margin-top: 0px;
   cursor: text;
+  white-space: normal;
+  text-align: center;
+  overflow-wrap: normal;
 `;
 
 const StyledSpan = styled.span`

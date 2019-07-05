@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Track from './components/Track.jsx';
+import AnchorRelatedTracks from './styled-comps/AnchorRelatedTracks.jsx';
 import RelatedTrackList from './styled-comps/RelatedTrackList.jsx';
 import styled from 'styled-components';
 
@@ -48,6 +49,7 @@ class App extends React.Component {
     return (
       <PageDiv>
         <Sidebar>
+          <AnchorRelatedTracks />
           <RelatedTrackList>
             {relatedTracks}
           </RelatedTrackList>

@@ -22,7 +22,7 @@
   "homepage": "https://github.com/sosacloud/sidebar-views#readme",
   "jest": {
     "collectCoverageFrom": [
-      "**/*.{}js,jsx",
+      "**/*.{js,jsx}",
       "!**/node_modules/**"
     ],
     "coverageDirectory": "./test_coverage",
