@@ -27,7 +27,8 @@ export default class Track extends React.Component {
     super(props);
     this.state = {
       moreClicked: false,
-      likeClicked: false
+      likeClicked: false,
+      likes: 0
     }
     this.moreButtonHandler = this.moreButtonHandler.bind(this);
     this.likeButtonHandler = this.likeButtonHandler.bind(this);
@@ -35,14 +36,16 @@ export default class Track extends React.Component {
     this.removeGlobalListener = this.removeGlobalListener.bind(this);
   }
 
-  componentDidLoad() {
+  componentDidMount() {
     fetch(`/api/track/likes/${this.props.track.id}`, {
       method: 'GET'
     })
       .then((data) => {
         return data.json();
       })
-      .then((jsonData) => { this.props.likes = jsonData })
+      .then((jsonData) => {
+        this.setState({ likes: jsonData.length });
+      })
       .catch((err) => {
         console.log('***Database Error***, ', err);
       })
@@ -88,7 +91,7 @@ export default class Track extends React.Component {
           <TrackInfo track={this.props.track} moreClicked={this.state.moreClicked}
             moreClickHandler={this.moreButtonHandler} likeClicked={this.state.likeClicked}
             likeClickHandler={this.likeButtonHandler} artistPopUpHandler={this.props.artistPopUpHandler}
-            artistPopUp={this.props.artistPopUp} likes={this.props.likes} />
+            artistPopUp={this.props.artistPopUp} likes={this.state.likes} />
         </StyledDiv>
       </StyledListItem>
     );
