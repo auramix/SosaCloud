@@ -35,6 +35,19 @@ export default class Track extends React.Component {
     this.removeGlobalListener = this.removeGlobalListener.bind(this);
   }
 
+  componentDidLoad() {
+    fetch(`/api/track/likes/${this.props.track.id}`, {
+      method: 'GET'
+    })
+      .then((data) => {
+        return data.json();
+      })
+      .then((jsonData) => { this.props.likes = jsonData })
+      .catch((err) => {
+        console.log('***Database Error***, ', err);
+      })
+  }
+
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (this.props.artistPopUp && this.state.moreClicked) {
       this.setState({ moreClicked: false });
@@ -74,7 +87,8 @@ export default class Track extends React.Component {
           <Artwork imageUrl={this.props.track.trackImgUrl} clicked={this.state.moreClicked} />
           <TrackInfo track={this.props.track} moreClicked={this.state.moreClicked}
             moreClickHandler={this.moreButtonHandler} likeClicked={this.state.likeClicked}
-            likeClickHandler={this.likeButtonHandler} artistPopUpHandler={this.props.artistPopUpHandler} artistPopUp={this.props.artistPopUp} />
+            likeClickHandler={this.likeButtonHandler} artistPopUpHandler={this.props.artistPopUpHandler}
+            artistPopUp={this.props.artistPopUp} likes={this.props.likes} />
         </StyledDiv>
       </StyledListItem>
     );

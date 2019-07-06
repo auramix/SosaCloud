@@ -61,7 +61,7 @@ const TrackInfo = function (props) {
       </div>
       {moreDropDown}
 
-      <TrackInteractions track={props.track} />
+      <TrackInteractions track={props.track} likes={props.likes} />
     </TrackInfoDiv>
   )
 }

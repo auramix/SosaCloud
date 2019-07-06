@@ -32,7 +32,7 @@ app.get('/api/user/:user_name', (req, res) => {
 })
 
 // Retrieves number of likes for a given track
-app.get('/api/track/:track_id', (req, res) => {
+app.get('/api/track/likes/:track_id', (req, res) => {
   let trackId = req.params.track_id;
   api.getLikesInfo(trackId, (err, results) => {
     if (err) {
