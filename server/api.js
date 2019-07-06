@@ -13,5 +13,11 @@ const getUserInfo = function (userName, callbk) {
   })
 }
 
+const getLikesInfo = function (trackId, callbk) {
+  db.connection.query('SELECT COUNT(*) FROM `likes_tracks` WHERE `track_id`= ?', [trackId], (err, results) => {
+    callbk(err, results);
+  })
+}
+
 exports.getRelatedTracks = getRelatedTracks;
 exports.getUserInfo = getUserInfo;
