@@ -7,6 +7,6 @@ const RelatedTrackList = styled.ul`
   display: block;
   list-style: none;
   text-align: left;
-`; 
+`;
 
 export default RelatedTrackList;

@@ -42,13 +42,13 @@ const TrackNameAnchor = styled(TrackInfoDiv)`
 `;
 
 const TrackInfo = function (props) {
-  let moreDropDown = props.moreClicked ? <MoreButtonList /> : null;
+  let moreDropDown = props.moreClicked && !props.artistPopUp ? <MoreButtonList /> : null;
 
   return (
     <TrackInfoDiv>
       <TrackButtons moreClickHandler={props.moreClickHandler} moreClicked={props.moreClicked} likeClicked={props.likeClicked} likeClickHandler={props.likeClickHandler} />
       <div>
-        <ArtistAnchor as="a" href={""}>
+        <ArtistAnchor as="a" href={""} onMouseOver={props.artistPopUpHandler} onMouseOut={props.artistPopUpHandler}>
           <span>{props.track.artistName}</span>
           <ArtistPopUp imageUrl={props.imageUrl} user_name={props.track.artistName} artistName={props.track.artistName} />
         </ArtistAnchor>

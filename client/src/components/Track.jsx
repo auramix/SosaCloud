@@ -16,6 +16,10 @@ const StyledDiv = styled.div`
   z-index: 0;
 `;
 
+const StyledListItem = styled.li`
+  padding: 5px 0px;
+`;
+
 
 
 export default class Track extends React.Component {
@@ -31,10 +35,16 @@ export default class Track extends React.Component {
     this.removeGlobalListener = this.removeGlobalListener.bind(this);
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props.artistPopUp && this.state.moreClicked) {
+      this.setState({ moreClicked: false });
+    }
+  }
+
   moreButtonHandler() {
     this.setState({ moreClicked: !this.state.moreClicked });
     this.globalEventListener();
-  };
+  }
 
   likeButtonHandler() {
     this.setState({ likeClicked: !this.state.likeClicked });
@@ -59,12 +69,14 @@ export default class Track extends React.Component {
 
   render() {
     return (
-      <li>
+      <StyledListItem>
         <StyledDiv >
           <Artwork imageUrl={this.props.track.trackImgUrl} clicked={this.state.moreClicked} />
-          <TrackInfo track={this.props.track} moreClicked={this.state.moreClicked} moreClickHandler={this.moreButtonHandler} imageUrl={"https://pics01212001.s3-us-west-1.amazonaws.com/4"} likeClicked={this.state.likeClicked} likeClickHandler={this.likeButtonHandler} />
+          <TrackInfo track={this.props.track} moreClicked={this.state.moreClicked}
+            moreClickHandler={this.moreButtonHandler} likeClicked={this.state.likeClicked}
+            likeClickHandler={this.likeButtonHandler} artistPopUpHandler={this.props.artistPopUpHandler} artistPopUp={this.props.artistPopUp} />
         </StyledDiv>
-      </li>
+      </StyledListItem>
     );
   }
 }

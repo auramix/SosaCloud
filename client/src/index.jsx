@@ -25,7 +25,8 @@ const Sidebar = styled.div`
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { relatedTracks: [] };
+    this.state = { relatedTracks: [], artistPopUpOpen: false };
+    this.artistPopUpListener = this.artistPopUpListener.bind(this);
   }
 
   componentDidMount() {
@@ -42,10 +43,14 @@ class App extends React.Component {
       })
   }
 
+  artistPopUpListener(e) {
+    this.setState({ artistPopUpOpen: !this.state.artistPopUpOpen })
+  }
+
 
   render() {
     let relatedTracks = this.state.relatedTracks;
-    relatedTracks = relatedTracks.map(track => <Track key={track.id} track={track} />);
+    relatedTracks = relatedTracks.map(track => <Track key={track.id} track={track} artistPopUp={this.state.artistPopUpOpen} artistPopUpHandler={this.artistPopUpListener} />);
     return (
       <PageDiv>
         <Sidebar>
