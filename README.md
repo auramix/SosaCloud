@@ -1,13 +1,11 @@
 # Project Name
 
-> Project description
+> A front-end clone of SoundCloud's track player page
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/sosacloud/comment-service.git
+  - https://github.com/sosacloud/music-player-service.git
 
 ## Table of Contents
 
@@ -17,14 +15,11 @@
 
 ## Usage
 
-> Some usage instructions
+> The relatedTracks view displays three tracks and their related information. Although the api can handle a track parameter provided in a call to the api, the relationship logic behind what constitutes a related track has been left undefined and three random tracks are retrieved from the database as a default.
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
-- Node 6.13.0
-- etc
 
 ## Development
 
@@ -32,8 +27,4 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 From within the root directory:
 
-```sh
-npm install -g webpack
-npm install
-```
 
