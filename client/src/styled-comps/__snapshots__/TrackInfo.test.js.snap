@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TrackInfo Has expected snapshot output 1`] = `
+<styled.div>
+  <TrackButtons />
+  <div>
+    <Styled(styled.div)
+      as="a"
+      href=""
+    >
+      <span>
+        The Dude
+      </span>
+      <ArtistPopUp
+        artistName="The Dude"
+        user_name="The Dude"
+      />
+    </Styled(styled.div)>
+  </div>
+  <div>
+    <Styled(styled.div)
+      as="a"
+      href=""
+    >
+      Knockin' on Heaven's Door
+    </Styled(styled.div)>
+  </div>
+  <TrackInteractions
+    track={
+      Object {
+        "artistName": "The Dude",
+        "trackName": "Knockin' on Heaven's Door",
+      }
+    }
+  />
+</styled.div>
+`;

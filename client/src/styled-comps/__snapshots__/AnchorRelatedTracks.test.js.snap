@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnchorRelatedTracks Has expected snapshot output 1`] = `
+<styled.a
+  href=""
+>
+  <styled.h3>
+    <styled.span />
+    <styled.span>
+      Related tracks
+    </styled.span>
+  </styled.h3>
+  <Styled(styled.span)
+    className="view-all"
+  >
+    View All
+  </Styled(styled.span)>
+</styled.a>
+`;

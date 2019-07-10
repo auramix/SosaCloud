@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Artwork Has expected snapshot output 1`] = `
+<styled.span>
+  <div>
+    <styled.span
+      imageUrl="www.fakeUrl.com"
+    />
+  </div>
+  <styled.span
+    className="overlay_buttons"
+  >
+    <styled.a
+      title="Play"
+    />
+  </styled.span>
+</styled.span>
+`;

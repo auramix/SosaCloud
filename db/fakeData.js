@@ -1,6 +1,16 @@
 let faker = require('faker');
 let fs = require('fs');
 
+const users = [];
+const getRandomUser = function () {
+  let randomIdx = Math.floor(Math.random() * 100);
+  return users[randomIdx];
+}
+for (let i = 0; i < 100; i++) {
+  users.push(faker.internet.userName());
+}
+
+
 let rnd = (max, min = 0) => Math.floor(Math.random() * (max - min) + min);
 let imageUrl = () => {
   return 'https://pics01212001.s3-us-west-1.amazonaws.com/' + rnd(34, 1);
@@ -11,7 +21,7 @@ let imageUrl = () => {
 let createTracksData = function (qty) {
   let data = '';
   for (var i = 0; i < qty; i++) {
-    data += `${faker.random.words()}, ${faker.internet.userName()}, ${rnd(100)}, ${rnd(100)}, ${imageUrl()}, ${rnd(100)}\n`
+    data += `${faker.random.words()}, ${getRandomUser()}, ${rnd(100)}, ${rnd(100)}, ${imageUrl()}, ${rnd(100)}\n`
   }
   return data.slice(0, -1);
 }
@@ -19,7 +29,7 @@ let createTracksData = function (qty) {
 let createUsersData = function (qty) {
   let data = '';
   for (var i = 0; i < qty; i++) {
-    data += `${faker.internet.userName()}, ${imageUrl()}\n`
+    data += `${users[i]},, ${faker.address.city() + ', ' + faker.address.country()},, ${imageUrl()},, ${rnd(1000000)}\n`
   }
   return data.slice(0, -1);
 }
@@ -27,7 +37,7 @@ let createUsersData = function (qty) {
 let createPlaylistsData = function (qty) {
   let data = '';
   for (var i = 0; i < qty; i++) {
-    data += `${faker.company.catchPhrase()}, ${imageUrl()}, ${faker.internet.userName()}, ${rnd(100)} \n`
+    data += `${faker.company.catchPhrase()}, ${imageUrl()}, ${getRandomUser()}, ${rnd(100)} \n`
   }
   return data.slice(0, -1);
 }
@@ -48,7 +58,7 @@ let createJuncData = function (qty) {
 let tracksData = createTracksData(100);
 let usersData = createUsersData(100);
 let playlistsData = createPlaylistsData(100);
-let likesTracksData = createJuncData(100);
+let likesTracksData = createJuncData(1000);
 let playlistsTracksData = createJuncData(100);
 let repostsData = createJuncData(100);
 

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoreButtonList Has expected snapshot output 1`] = `
+<styled.div
+  className="more-list"
+>
+  <Styled(styled.button)
+    title="Repost"
+  >
+    <styled.span>
+      Repost
+    </styled.span>
+  </Styled(styled.button)>
+  <Styled(styled.button)
+    title="Share"
+  >
+    <styled.span>
+      Share
+    </styled.span>
+  </Styled(styled.button)>
+  <Styled(styled.button)
+    title="Add to Next up"
+  >
+    <styled.span>
+      Add to Next up
+    </styled.span>
+  </Styled(styled.button)>
+  <Styled(styled.button)
+    title="Add to Playlist"
+  >
+    <styled.span>
+      Add to Playlist
+    </styled.span>
+  </Styled(styled.button)>
+  <Styled(styled.button)
+    title="Go to Station"
+  >
+    <styled.span>
+      Station
+    </styled.span>
+  </Styled(styled.button)>
+</styled.div>
+`;
