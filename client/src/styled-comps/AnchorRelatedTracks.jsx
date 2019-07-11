@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import styled from 'styled-components';
 
 const ImageSpan_ART = styled.span`
