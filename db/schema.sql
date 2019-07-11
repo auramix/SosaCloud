@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS sosaCloud;
+DROP DATABASE IF EXISTS relatedTracks;
 
-CREATE DATABASE sosaCloud;
+CREATE DATABASE relatedTracks;
 
-USE sosaCloud;
+USE relatedTracks;
 
 CREATE TABLE tracks(
   id int NOT NULL AUTO_INCREMENT,

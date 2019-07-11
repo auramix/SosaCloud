@@ -8,9 +8,11 @@ app.use(express.static(__dirname + '/../client/dist'));
 // Retrieves track info from db
 app.get('/api/track/:id', (req, res) => {
   let id = req.params.id;
+  if (id === -1) {
+    id = Math.ceil(Math.random() * 100);
+  }
   api.getRelatedTracks(id, (err, results) => {
     if (err) {
-      console.log('db Query Error: ', err)
       res.status(404).json(err);
     } else {
       res.status(200).json(results);
@@ -45,4 +47,3 @@ app.get('/api/track/likes/:track_id', (req, res) => {
 })
 
 module.exports = app;
-

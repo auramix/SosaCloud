@@ -6,6 +6,7 @@ import RelatedTrackList from './styled-comps/RelatedTrackList.jsx';
 import styled from 'styled-components';
 
 const PageDiv = styled.div`
+  position: relative;
   background-color: #EEE;
   height: 5000px;
   width: 5000px;
@@ -14,12 +15,12 @@ const PageDiv = styled.div`
 const Sidebar = styled.div`
   position: absolute;
   background-color: #fff;
-  margin-right: 225px;
-  top: 30px;
+  margin-right: 119px;
   right: 0;
   bottom: auto;
   width: 300px;
   margin-bottom: 50px;
+  margin-top: 20px;
 `;
 
 class App extends React.Component {
@@ -30,16 +31,21 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    let randomId = Math.ceil(Math.random() * 100);
-    fetch(`/api/track/${randomId}`, {
+    // let randomId = Math.ceil(Math.random() * 100);
+    fetch(`/api/track`, {
       method: 'GET'
     })
       .then((data) => {
         return data.json();
       })
-      .then((jsonData) => this.setState({ relatedTracks: jsonData }))
+      .then((jsonData) => {
+        console.log('RelatedTracks - ', jsonData)
+        if (Array.isArray(jsonData)) {
+          this.setState({ relatedTracks: jsonData })
+        }
+      })
       .catch((err) => {
-        console.log('***Database Error***, ', err);
+        console.log('***Client componentDidMount fetch error***, ', err);
       })
   }
 
@@ -50,16 +56,16 @@ class App extends React.Component {
 
   render() {
     let relatedTracks = this.state.relatedTracks;
-    relatedTracks = relatedTracks.map(track => <Track key={track.id} track={track} artistPopUp={this.state.artistPopUpOpen} artistPopUpHandler={this.artistPopUpListener} />);
+    if (relatedTracks.length > 0) {
+      relatedTracks = relatedTracks.map(track => <Track key={track.id} track={track} artistPopUp={this.state.artistPopUpOpen} artistPopUpHandler={this.artistPopUpListener} />);
+    }
     return (
-      <PageDiv>
         <Sidebar>
           <AnchorRelatedTracks />
           <RelatedTrackList>
             {relatedTracks}
           </RelatedTrackList>
         </Sidebar>
-      </PageDiv>
     );
   }
 }
@@ -67,5 +73,5 @@ class App extends React.Component {
 
 ReactDOM.render(
   <App />,
-  document.getElementById('App')
+  document.getElementById('sidebar-views')
 );
