@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
 const api = require('./api.js');
+var id;
 
 
-app.use(express.static(__dirname + '/../client/dist'));
+app.use('/', express.static(__dirname + '/../client/dist'));
+app.use('/:id', express.static(__dirname + '/../client/dist'));
+
 
 // Retrieves track info from db
 app.get('/api/track/:id', (req, res) => {
