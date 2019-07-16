@@ -31,7 +31,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-<<<<<<< HEAD
     // uncommented randomId
     console.log(this.props.path)
     let id = this.props.path || Math.ceil(Math.random() * 100);
@@ -45,17 +44,6 @@ class App extends React.Component {
       .then(jsonData => {
         console.log('PATH => ', this.props.path);
         console.log('RelatedTracks - ', jsonData);
-=======
-    // let randomId = Math.ceil(Math.random() * 100);
-    fetch(`/api/track`, {
-      method: 'GET'
-    })
-      .then((data) => {
-        return data.json();
-      })
-      .then((jsonData) => {
-        console.log('RelatedTracks - ', jsonData)
->>>>>>> f1de9868d2f567c69ec6e49d912f4480bf516786
         if (Array.isArray(jsonData)) {
           this.setState({ relatedTracks: jsonData })
         }
@@ -87,11 +75,4 @@ class App extends React.Component {
 }
 
 
-<<<<<<< HEAD
 ReactDOM.render(<App path={window.location.pathname.slice(1, -1)}/>, document.getElementById('sidebar-views'));
-=======
-ReactDOM.render(
-  <App />,
-  document.getElementById('sidebar-views')
-);
->>>>>>> f1de9868d2f567c69ec6e49d912f4480bf516786
