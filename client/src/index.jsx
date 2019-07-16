@@ -17,7 +17,7 @@ const Sidebar = styled.div`
   background-color: #fff;
   margin-right: 119px;
   right: 0;
-  bottom: auto;
+  bottom: -80px;
   width: 300px;
   margin-bottom: 50px;
   margin-top: 20px;
