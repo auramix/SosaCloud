@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 const PageDiv = styled.div`
   position: relative;
-  background-color: #eee;
+  background-color: #EEE;
   height: 5000px;
   width: 5000px;
 `;
@@ -17,7 +17,7 @@ const Sidebar = styled.div`
   background-color: #fff;
   margin-right: 119px;
   right: 0;
-  bottom: auto;
+  bottom: -80px;
   width: 300px;
   margin-bottom: 50px;
   margin-top: 20px;
@@ -31,6 +31,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+<<<<<<< HEAD
     // uncommented randomId
     console.log(this.props.path)
     let id = this.props.path || Math.ceil(Math.random() * 100);
@@ -44,39 +45,53 @@ class App extends React.Component {
       .then(jsonData => {
         console.log('PATH => ', this.props.path);
         console.log('RelatedTracks - ', jsonData);
+=======
+    // let randomId = Math.ceil(Math.random() * 100);
+    fetch(`/api/track`, {
+      method: 'GET'
+    })
+      .then((data) => {
+        return data.json();
+      })
+      .then((jsonData) => {
+        console.log('RelatedTracks - ', jsonData)
+>>>>>>> f1de9868d2f567c69ec6e49d912f4480bf516786
         if (Array.isArray(jsonData)) {
-          this.setState({ relatedTracks: jsonData });
+          this.setState({ relatedTracks: jsonData })
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log('***Client componentDidMount fetch error***, ', err);
-      });
+      })
   }
 
   artistPopUpListener(e) {
-    this.setState({ artistPopUpOpen: !this.state.artistPopUpOpen });
+    this.setState({ artistPopUpOpen: !this.state.artistPopUpOpen })
   }
+
 
   render() {
     let relatedTracks = this.state.relatedTracks;
     if (relatedTracks.length > 0) {
-      relatedTracks = relatedTracks.map(track => (
-        <Track
-          key={track.id}
-          track={track}
-          artistPopUp={this.state.artistPopUpOpen}
-          artistPopUpHandler={this.artistPopUpListener}
-        />
-      ));
+      relatedTracks = relatedTracks.map(track => <Track key={track.id} track={track} artistPopUp={this.state.artistPopUpOpen} artistPopUpHandler={this.artistPopUpListener} />);
     }
     return (
-      <Sidebar>
-        <AnchorRelatedTracks />
-        <RelatedTrackList>{relatedTracks}</RelatedTrackList>
-      </Sidebar>
+        <Sidebar>
+          <AnchorRelatedTracks />
+          <RelatedTrackList>
+            {relatedTracks}
+          </RelatedTrackList>
+        </Sidebar>
     );
   }
 }
 
 
+<<<<<<< HEAD
 ReactDOM.render(<App path={window.location.pathname.slice(1, -1)}/>, document.getElementById('sidebar-views'));
+=======
+ReactDOM.render(
+  <App />,
+  document.getElementById('sidebar-views')
+);
+>>>>>>> f1de9868d2f567c69ec6e49d912f4480bf516786
