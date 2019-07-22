@@ -29,19 +29,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // uncommented randomId
-    console.log(this.props.path)
     let id = this.props.path || Math.ceil(Math.random() * 100);
     // added id to end point
     fetch(`/api/track/${id}`, {
       method: 'GET'
     })
       .then(data => data.json())
-      // .then(res => res.text()) // convert to plain text
-      // .then(text => console.log('TEXT', text))
       .then(jsonData => {
-        console.log('PATH => ', this.props.path);
-        console.log('RelatedTracks - ', jsonData);
         if (Array.isArray(jsonData)) {
           this.setState({ relatedTracks: jsonData })
         }
@@ -71,6 +65,7 @@ class App extends React.Component {
           </div>
           <div>
             <AnchorInPlaylists textHeader={"In playlists"} imageSize={"18px 18px"} imageUrl={"url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+aWNfcGxheWxpc3RfMTg8L3RpdGxlPjxnIGZpbGw9IiM5OTkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTIgNmgxMHYxMEgyeiIvPjxwYXRoIGZpbGwtb3BhY2l0eT0iLjciIGQ9Ik01IDJoMTF2MTBoLTJWNEg1eiIvPjwvZz48L3N2Zz4=)"}/>
+            <Playlists />
           </div>
         </Sidebar>
     );
