@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ImageSpan_ART = styled.span`
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCI+PHBhdGggZmlsbD0iIzk5OSIgZD0iTTUgMTJoMnY0SDV6TTIxIDEyaDJ2NGgtMnpNMTcgMTBoMnY4aC0yek05IDhoMnYxMkg5ek0xMyA1aDJ2MThoLTJ6Ii8+PC9zdmc+);
-  background-size: 28px 28px;
+  background-image: ${props => props.imageUrl};
+  background-size: ${props => props.imageSize};
   background-position: center center;
+  background-repeat: no-repeat;
   display: inline-block;
   margin-right: 4px;
   height: 24px;
@@ -53,7 +54,7 @@ const AnchorRelatedTracks = function (props) {
   return (
     <StyledAnchor_ART href={''}>
       <StyledH3>
-        <ImageSpan_ART />
+        <ImageSpan_ART imageUrl={props.imageUrl}/>
         <TextSpan_ART>{props.textHeader}</TextSpan_ART>
       </StyledH3>
       <ViewAllSpan className={"view-all"}>View All</ViewAllSpan>

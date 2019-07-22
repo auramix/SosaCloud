@@ -5,12 +5,6 @@ import AnchorRelatedTracks from './styled-comps/AnchorRelatedTracks.jsx';
 import RelatedTrackList from './styled-comps/RelatedTrackList.jsx';
 import styled from 'styled-components';
 
-const PageDiv = styled.div`
-  position: relative;
-  background-color: #EEE;
-  height: 5000px;
-  width: 5000px;
-`;
 
 const Sidebar = styled.div`
   position: absolute;
@@ -21,6 +15,10 @@ const Sidebar = styled.div`
   width: 300px;
   margin-bottom: 50px;
   margin-top: 20px;
+`;
+
+const AnchorInPlaylists = styled(AnchorRelatedTracks)`
+  background-size: 18px 18px;
 `;
 
 class App extends React.Component {
@@ -65,10 +63,15 @@ class App extends React.Component {
     }
     return (
         <Sidebar>
-          <AnchorRelatedTracks textHeader={"Related tracks"}/>
-          <RelatedTrackList>
-            {relatedTracks}
-          </RelatedTrackList>
+          <div>
+            <AnchorRelatedTracks textHeader={"Related tracks"} imageSize={"28px 28px"} imageUrl={"url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCI+PHBhdGggZmlsbD0iIzk5OSIgZD0iTTUgMTJoMnY0SDV6TTIxIDEyaDJ2NGgtMnpNMTcgMTBoMnY4aC0yek05IDhoMnYxMkg5ek0xMyA1aDJ2MThoLTJ6Ii8+PC9zdmc+)"}/>
+            <RelatedTrackList>
+              {relatedTracks}
+            </RelatedTrackList>
+          </div>
+          <div>
+            <AnchorInPlaylists textHeader={"In playlists"} imageSize={"18px 18px"} imageUrl={"url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+aWNfcGxheWxpc3RfMTg8L3RpdGxlPjxnIGZpbGw9IiM5OTkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTIgNmgxMHYxMEgyeiIvPjxwYXRoIGZpbGwtb3BhY2l0eT0iLjciIGQ9Ik01IDJoMTF2MTBoLTJWNEg1eiIvPjwvZz48L3N2Zz4=)"}/>
+          </div>
         </Sidebar>
     );
   }
