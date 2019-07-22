@@ -65,7 +65,7 @@ class App extends React.Component {
     }
     return (
         <Sidebar>
-          <AnchorRelatedTracks />
+          <AnchorRelatedTracks textHeader={"Related tracks"}/>
           <RelatedTrackList>
             {relatedTracks}
           </RelatedTrackList>

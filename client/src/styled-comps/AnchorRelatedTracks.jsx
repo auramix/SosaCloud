@@ -49,12 +49,12 @@ const ViewAllSpan = styled(TextSpan_ART)`
 `;
 
 
-const AnchorRelatedTracks = function () {
+const AnchorRelatedTracks = function (props) {
   return (
     <StyledAnchor_ART href={''}>
       <StyledH3>
         <ImageSpan_ART />
-        <TextSpan_ART>Related tracks</TextSpan_ART>
+        <TextSpan_ART>{props.textHeader}</TextSpan_ART>
       </StyledH3>
       <ViewAllSpan className={"view-all"}>View All</ViewAllSpan>
     </StyledAnchor_ART>
