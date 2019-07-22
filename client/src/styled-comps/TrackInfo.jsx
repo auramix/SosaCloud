@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { TrackInteractions } from './TrackInteractions.jsx'
 import { TrackButtons } from './TrackButtons.jsx';
-import { ArtistPopUp } from './ArtistPopUp.jsx';
+import ArtistAnchorEl from './ArtistAnchor.jsx';
 import MoreButtonList from './MoreButtonList.jsx';
 
 
@@ -19,18 +19,6 @@ const TrackInfoDiv = styled.div`
   z-index: 1;
 `;
 
-const ArtistAnchor = styled(TrackInfoDiv)`
-  position: realtive;
-  color: #999;
-  margin: 5px 5px 2px 0px;
-  white-space: nowrap;
-  :hover {
-    color: #333;
-    .artist-pop-up {
-      visibility: visible;
-    }
-  }
-`;
 
 const TrackNameAnchor = styled(TrackInfoDiv)`
   position: relative;
@@ -48,10 +36,7 @@ const TrackInfo = function (props) {
     <TrackInfoDiv>
       <TrackButtons moreClickHandler={props.moreClickHandler} moreClicked={props.moreClicked} likeClicked={props.likeClicked} likeClickHandler={props.likeClickHandler} />
       <div>
-        <ArtistAnchor as="a" href={""} onMouseOver={props.artistPopUpHandler} onMouseOut={props.artistPopUpHandler}>
-          <span>{props.track.artistName}</span>
-          <ArtistPopUp imageUrl={props.imageUrl} user_name={props.track.artistName} artistName={props.track.artistName} />
-        </ArtistAnchor>
+        <ArtistAnchorEl {...props}/>
       </div>
 
       <div>
@@ -66,4 +51,4 @@ const TrackInfo = function (props) {
   )
 }
 
-export { ArtistAnchor, TrackInfo };
+export { TrackInfo, TrackInfoDiv };
