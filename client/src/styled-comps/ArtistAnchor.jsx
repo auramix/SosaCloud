@@ -33,7 +33,7 @@ const ArtistAnchorEl = function(props) {
   return (
     <ArtistAnchor as="a" href={""} onMouseOver={props.artistPopUpHandler} onMouseOut={props.artistPopUpHandler}>
       <span>{props.track.artistName}</span>
-      <ArtistPopUp imageUrl={props.imageUrl} user_name={props.track.artistName} artistName={props.track.artistName} />
+      <ArtistPopUp imageUrl={props.imageUrl} artistName={props.track.artistName} />
     </ArtistAnchor>
   )
 }

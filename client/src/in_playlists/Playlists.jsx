@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
-import Playlist from './SinglePlaylist.jsx'
+import Playlist from './SinglePlaylist.jsx';
+
 
 class Playlists extends React.Component {
   constructor(props) {
