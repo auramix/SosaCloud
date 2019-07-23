@@ -148,7 +148,7 @@ export default class ArtistPopUp extends React.Component {
   }
 
   componentDidMount() {
-    let userName = this.props.user_name.trim();
+    let userName = this.props.artistName.trim();
     fetch(`/api/user/${userName}`, {
       method: 'GET'
     })

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import React from 'react';
-import ArtistAnchorEl from './ArtistAnchor.jsx';
-import TrackInfoDiv from '../styled-comps/TrackInfo.jsx';
-import { List, Like } from '../styled-comps/TrackInfo.jsx';
+import ArtistAnchorEl from '../styled-comps/ArtistAnchor.jsx';
+import { List, Like } from '../styled-comps/TrackInteractions.jsx';
+import {Artwork} from '../styled-comps/Artwork.jsx';
 
 
 
@@ -23,6 +23,19 @@ const PlaylistNameAnchor = styled.a`
   line-height: 1.3em;
   font-weight: 50%;
   white-space: nowrap;
+`;
+
+const PlaylistInfoDiv = styled.div`
+  overflow: hidden;
+  font: 14px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 100;
+  line-height: 1;
+  margin: 0 0 2px;
+  display: block;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  z-index: 1;
 `;
 
 
@@ -54,7 +67,7 @@ export default class SinglePlaylist extends React.Component {
       <StyledListItem>
         <StyledDiv >
           <Artwork imageUrl={this.props.playlist.playlistImgUrl}/>
-          <TrackInfoDiv>
+          <PlaylistInfoDiv>
             <div>
               <ArtistAnchorEl playlist={this.props.playlist} artistName={this.props.playlist.userName}/>
             </div>
@@ -70,7 +83,7 @@ export default class SinglePlaylist extends React.Component {
                 </Like>
               </List>
             </div>
-          </TrackInfoDiv>
+          </PlaylistInfoDiv>
         </StyledDiv>
       </StyledListItem>
     );

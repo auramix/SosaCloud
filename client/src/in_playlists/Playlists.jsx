@@ -3,11 +3,10 @@ import React from 'react';
 import SinglePlaylist from './SinglePlaylist.jsx';
 import List from '../styled-comps/RelatedTrackList.jsx';
 
-class Playlists extends React.Component {
+export default class Playlists extends React.Component {
   constructor(props) {
     super(props);
     this.state = { playlists: [], artistPopUpOpen: false  };
-    this.artistPopUpListener = this.artistPopUpListener.bind(this);
   }
 
   componentDidMount() {
@@ -19,6 +18,7 @@ class Playlists extends React.Component {
       .then(data => data.json())
       .then(jsonData => {
         if (Array.isArray(jsonData)) {
+          console.log('This is our jsonData: ', jsonData);
           this.setState({ playlists: jsonData })
         }
       })
@@ -31,7 +31,7 @@ class Playlists extends React.Component {
   render() {
     let playlists = this.state.playlists;
     if (playlists.length > 0) {
-      playlists = playlists.map(playlist => <SinglePlaylist key={track.id} playlist={playlist} />);
+      playlists = playlists.map(playlist => <SinglePlaylist key={playlist.id} playlist={playlist} />);
     }
     return (
         <List>

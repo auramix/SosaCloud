@@ -28,8 +28,7 @@ const getLikesInfo = function (trackId, callbk) {
 // }
 
 const getPlaylists = function (trackId, callbk) {
-  let subquery = `SELECT 'playlist_id' FROM 'playlists_tracks' WHERE 'track_id'=${trackId}`;
-  db.connection.query('SELECT * FROM `playlists` WHERE `id` IN (?) LIMIT 3', [subquery], (err, results, fileds) => {
+  db.connection.query('SELECT * FROM playlists WHERE id IN (SELECT `playlist_id` FROM `playlists_tracks` WHERE `track_id`=?) LIMIT 3', [trackId], (err, results, fileds) => {
     callbk(err, results);
   })
 }

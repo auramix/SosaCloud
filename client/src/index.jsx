@@ -4,6 +4,7 @@ import Track from './components/Track.jsx';
 import AnchorRelatedTracks from './styled-comps/AnchorRelatedTracks.jsx';
 import RelatedTrackList from './styled-comps/RelatedTrackList.jsx';
 import styled from 'styled-components';
+import Playlists from './in_playlists/Playlists.jsx';
 
 
 const Sidebar = styled.div`
