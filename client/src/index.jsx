@@ -59,13 +59,13 @@ class App extends React.Component {
     return (
         <Sidebar>
           <div>
-            <AnchorRelatedTracks textHeader={"Related tracks"} imageSize={"28px 28px"} imageUrl={"url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCI+PHBhdGggZmlsbD0iIzk5OSIgZD0iTTUgMTJoMnY0SDV6TTIxIDEyaDJ2NGgtMnpNMTcgMTBoMnY4aC0yek05IDhoMnYxMkg5ek0xMyA1aDJ2MThoLTJ6Ii8+PC9zdmc+)"}/>
+            <AnchorRelatedTracks textHeader={"Related tracks"} imageSize={"28px 28px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/relatedTracks.svg)"}/>
             <RelatedTrackList>
               {relatedTracks}
             </RelatedTrackList>
           </div>
           <div>
-            <AnchorInPlaylists textHeader={"In playlists"} imageSize={"18px 18px"} imageUrl={"url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+aWNfcGxheWxpc3RfMTg8L3RpdGxlPjxnIGZpbGw9IiM5OTkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTIgNmgxMHYxMEgyeiIvPjxwYXRoIGZpbGwtb3BhY2l0eT0iLjciIGQ9Ik01IDJoMTF2MTBoLTJWNEg1eiIvPjwvZz48L3N2Zz4=)"}/>
+            <AnchorInPlaylists textHeader={"In playlists"} imageSize={"18px 18px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/inPlaylists.svg)"}/>
             <Playlists />
           </div>
         </Sidebar>
