@@ -56,7 +56,7 @@ export default class SinglePlaylist extends React.Component {
           <Artwork imageUrl={this.props.playlist.playlistImgUrl}/>
           <TrackInfoDiv>
             <div>
-              <ArtistAnchorEl {...this.props}/>
+              <ArtistAnchorEl playlist={this.props.playlist} artistName={this.props.playlist.userName}/>
             </div>
             <div>
               <PlaylistNameAnchor href={""}>
