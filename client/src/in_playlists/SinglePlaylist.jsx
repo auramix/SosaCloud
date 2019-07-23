@@ -32,20 +32,20 @@ export default class SinglePlaylist extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    fetch(`/api/playlist/likes/${this.props.playlist.id}`, {
-      method: 'GET'
-    })
-      .then((data) => {
-        return data.json();
-      })
-      .then((jsonData) => {
-        this.props.likes = jsonData.likes;
-      })
-      .catch((err) => {
-        console.log('***Database Error - playlist/likes/${playlist.id} - ***, ', err);
-      })
-  }
+  // componentDidMount() {
+  //   fetch(`/api/playlist/likes/${this.props.playlist.id}`, {
+  //     method: 'GET'
+  //   })
+  //     .then((data) => {
+  //       return data.json();
+  //     })
+  //     .then((jsonData) => {
+  //       this.props.likes = jsonData.likes;
+  //     })
+  //     .catch((err) => {
+  //       console.log('***Database Error - playlist/likes/${playlist.id} - ***, ', err);
+  //     })
+  // }
 
   
 
@@ -66,7 +66,7 @@ export default class SinglePlaylist extends React.Component {
             <div>
               <List>
                 <Like href={""}>
-                  <span>{this.props.likes}</span>
+                  <span>{this.props.playlist.likes}</span>
                 </Like>
               </List>
             </div>

@@ -49,11 +49,11 @@ app.get('/api/track/likes/:track_id', (req, res) => {
   })
 })
 
-app.get('/api/playlists/:id', (req, res) => {
+app.get('/api/playlists/:track_id', (req, res) => {
   let trackId = req.params.track_id;
-  api.getAssociatedPlaylists(trackId, (err, results) => {
+  api.getPlaylists(trackId, (err, results) => {
     if (err) {
-      console.log('getAssociatedPlaylists error: ', err);
+      console.log('getPlaylists error: ', err);
       res.status(404).json(err);
     } else {
       res.status(200).json(results);
