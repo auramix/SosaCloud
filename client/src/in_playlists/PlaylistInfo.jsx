@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import React from 'react';
 import ArtistAnchorEl from '../styled-comps/ArtistAnchor.jsx';
 import { List, Like } from '../styled-comps/TrackInteractions.jsx';
-import {Artwork} from '../styled-comps/Artwork.jsx';
-import {PlaylistInfo} from './PlaylistInfo.jsx';
 
 const StyledPlaylistSpan = styled.span`
   display: block;
@@ -50,25 +48,26 @@ const PlaylistInfoDiv = styled.div`
   z-index: 1;
 `;
 
-
-
-export default class SinglePlaylist extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <StyledListItem>
-        <StyledDiv >
-          <StyledPlaylistSpan>
-            <Artwork imageUrl={this.props.playlist.playlistImgUrl}/>
-          </StyledPlaylistSpan>
-          
-          <PlaylistInfo playlist={this.props.playlist}/>
-          
-        </StyledDiv>
-      </StyledListItem>
-    );
-  }
+const PlaylistInfo = function (props) {
+  return (
+    <PlaylistInfoDiv>
+      <div>
+        <ArtistAnchorEl playlist={props.playlist} artistName={props.playlist.userName}/>
+      </div>
+      <div>
+        <PlaylistNameAnchor href={""}>
+          {props.playlist.playlistName}
+        </PlaylistNameAnchor>
+      </div>
+      <div>
+        <List>
+          <Like href={""}>
+            <span>{props.playlist.likes}</span>
+          </Like>
+        </List>
+      </div>
+    </PlaylistInfoDiv>
+  );
 }
+
+export {PlaylistInfo};
