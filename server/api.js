@@ -19,6 +19,23 @@ const getLikesInfo = function (trackId, callbk) {
   })
 }
 
+// Given a track's id find no more than 3 playlists that include the give track
+const getAssociatedPlaylists = function (trackId, callbk) {
+  db.connection.query('SELECT * FROM `playlists_tracks` WHERE `track_id`= ?', [trackId], (err, results, fields) => {
+    callbk(err, results);
+  })
+}
+
+const getPlaylists = function ([id1, id2, id3], callbk) {
+  db.connection.query('SELECT * FROM `playlists` WHERE `id` IN (?, ?, ?)', [id1, id2, id3], (err, results, fileds) => {
+    callbk(err, results);
+  })
+}
+
+
+
 exports.getRelatedTracks = getRelatedTracks;
 exports.getUserInfo = getUserInfo;
 exports.getLikesInfo = getLikesInfo;
+exports.getAssociatedPlaylists = getAssociatedPlaylists;
+exports.getPlaylists = getPlaylists;

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import React from 'react';
 import ArtistAnchorEl from './ArtistAnchor.jsx';
 import TrackInfoDiv from '../styled-comps/TrackInfo.jsx';
+import { List, Like } from '../styled-comps/TrackInfo.jsx';
 
 
 
@@ -26,7 +27,7 @@ const PlaylistNameAnchor = styled.a`
 
 
 
-export default class Track extends React.Component {
+export default class SinglePlaylist extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -42,7 +43,7 @@ export default class Track extends React.Component {
         this.props.likes = jsonData.likes;
       })
       .catch((err) => {
-        console.log('***Database Error***, ', err);
+        console.log('***Database Error - playlist/likes/${playlist.id} - ***, ', err);
       })
   }
 
@@ -61,6 +62,13 @@ export default class Track extends React.Component {
               <PlaylistNameAnchor href={""}>
                 {this.props.playlist.playlistName}
               </PlaylistNameAnchor>
+            </div>
+            <div>
+              <List>
+                <Like href={""}>
+                  <span>{this.props.likes}</span>
+                </Like>
+              </List>
             </div>
           </TrackInfoDiv>
         </StyledDiv>

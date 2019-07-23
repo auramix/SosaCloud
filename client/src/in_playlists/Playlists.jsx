@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
-import Playlist from './SinglePlaylist.jsx';
-
+import SinglePlaylist from './SinglePlaylist.jsx';
+import List from '../styled-comps/RelatedTrackList.jsx';
 
 class Playlists extends React.Component {
   constructor(props) {
@@ -37,7 +37,9 @@ class Playlists extends React.Component {
       playlists = playlists.map(playlist => <SinglePlaylist key={track.id} playlist={playlist} artistPopUp={this.state.artistPopUpOpen} artistPopUpHandler={this.artistPopUpListener} />);
     }
     return (
-        
+        <List>
+          {playlists}
+        </List>
     );
   }
 }
