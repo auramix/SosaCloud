@@ -27,14 +27,11 @@ class Playlists extends React.Component {
       })
   }
 
-  artistPopUpListener(e) {
-    this.setState({ artistPopUpOpen: !this.state.artistPopUpOpen })
-  }
-
+  
   render() {
     let playlists = this.state.playlists;
     if (playlists.length > 0) {
-      playlists = playlists.map(playlist => <SinglePlaylist key={track.id} playlist={playlist} artistPopUp={this.state.artistPopUpOpen} artistPopUpHandler={this.artistPopUpListener} />);
+      playlists = playlists.map(playlist => <SinglePlaylist key={track.id} playlist={playlist} />);
     }
     return (
         <List>
