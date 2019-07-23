@@ -4,7 +4,16 @@ import ArtistAnchorEl from '../styled-comps/ArtistAnchor.jsx';
 import { List, Like } from '../styled-comps/TrackInteractions.jsx';
 import {Artwork} from '../styled-comps/Artwork.jsx';
 
-
+const StyledPlaylistSpan = styled.span`
+  display: inline-block;
+  background: center center/contain no-repeat;
+  background-image: url(https://a-v2.sndcdn.com/assets/images/playlist-cover-bg_small@2x-c437aa7.png);
+  margin-right: 4px;
+  padding: 5px 6px;
+  width: 50px;
+  height: 50px;
+  position: relative;
+`;
 
 const StyledDiv = styled.div`
   height: 62px;
@@ -27,11 +36,12 @@ const PlaylistNameAnchor = styled.a`
 
 const PlaylistInfoDiv = styled.div`
   overflow: hidden;
+  position: absolute;
   font: 14px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   font-weight: 100;
   line-height: 1;
   margin: 0 0 2px;
-  display: block;
+  display: inline-block;
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
@@ -66,7 +76,10 @@ export default class SinglePlaylist extends React.Component {
     return (
       <StyledListItem>
         <StyledDiv >
-          <Artwork imageUrl={this.props.playlist.playlistImgUrl}/>
+          <StyledPlaylistSpan>
+            <Artwork imageUrl={this.props.playlist.playlistImgUrl}/>
+          </StyledPlaylistSpan>
+          
           <PlaylistInfoDiv>
             <div>
               <ArtistAnchorEl playlist={this.props.playlist} artistName={this.props.playlist.userName}/>

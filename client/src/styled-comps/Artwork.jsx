@@ -68,6 +68,7 @@ const PlayButton = styled.a`
 
 const Artwork = (props) => {
   return (
+   
     <ArtSpan>
       <div>
         <ImageSpan imageUrl={props.imageUrl} />
@@ -76,6 +77,7 @@ const Artwork = (props) => {
         <PlayButton title={"Play"}></PlayButton>
       </PlayButtonSpan>
     </ArtSpan>
+   
   );
 
 }
