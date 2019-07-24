@@ -29,7 +29,7 @@ const RelatedTracksDiv = styled.div`
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { relatedTracks: [], artistPopUpOpen: false, inPlaylists: false };
+    this.state = { relatedTracks: [], artistPopUpOpen: false, playlists: false };
     this.artistPopUpListener = this.artistPopUpListener.bind(this);
     this.renderPlaylists = this.renderPlaylists.bind(this);
   }
@@ -56,7 +56,7 @@ class App extends React.Component {
   }
 
   renderPlaylists() {
-    this.setState({inPlaylists: true});
+    this.setState({playlists: true});
   }
 
 
@@ -67,9 +67,8 @@ class App extends React.Component {
     }
 
     let inPlaylists = null;
-    if (this.state.inPlaylists) {
+    if (this.state.playlists) {
       inPlaylists = <AnchorInPlaylists textHeader={"In playlists"} imageSize={"18px 18px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/inPlaylists.svg)"}/>
-
     }
 
     return (
