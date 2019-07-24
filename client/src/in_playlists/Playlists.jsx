@@ -22,6 +22,11 @@ export default class Playlists extends React.Component {
           this.setState({ playlists: jsonData })
         }
       })
+      .then(() => {
+        if (this.state.playlists.length) {
+          this.props.renderPlaylists();
+        }
+      })
       .catch((err) => {
         console.log('***Client componentDidMount fetch error in Playlists component***, ', err);
       })

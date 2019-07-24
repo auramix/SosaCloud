@@ -8,7 +8,7 @@ import {PlaylistInfo} from './PlaylistInfo.jsx';
 const StyledPlaylistSpan = styled.span`
   display: block;
   background: center center/contain no-repeat;
-  background-image: url(https://a-v2.sndcdn.com/assets/images/playlist-cover-bg_small@2x-c437aa7.png);
+  background-image: url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/playlist_cover.png);
   margin-right: 4px;
   padding: 5px 6px;
   width: 50px;
@@ -27,28 +27,6 @@ const StyledListItem = styled.li`
   padding: 5px 0px;
 `;
 
-const PlaylistNameAnchor = styled.a`
-  position: relative;
-  color: #333;
-  margin: 2px 5px 1px 0px;
-  line-height: 1.3em;
-  font-weight: 50%;
-  white-space: nowrap;
-  text-decoration: none;
-`;
-
-const PlaylistInfoDiv = styled.div`
-  overflow: hidden;
-  font: 14px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
-  font-weight: 100;
-  line-height: 1;
-  margin: 0 0 2px;
-  display: block;
-  list-style: none;
-  text-decoration: none;
-  box-sizing: border-box;
-  z-index: 1;
-`;
 
 
 
@@ -62,7 +40,7 @@ export default class SinglePlaylist extends React.Component {
       <StyledListItem>
         <StyledDiv >
           <StyledPlaylistSpan>
-            <Artwork imageUrl={this.props.playlist.playlistImgUrl}/>
+            <Artwork playlistArtSpan={true} imageUrl={this.props.playlist.playlistImgUrl}/>
           </StyledPlaylistSpan>
           
           <PlaylistInfo playlist={this.props.playlist}/>

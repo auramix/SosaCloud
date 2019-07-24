@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const ArtSpan = styled.span`
   margin-right: 4px;
-  padding: 5px 6px 5px 5px;
+  padding: ${props => props.playlistArtSpan ? '0px 5px 0px 0px' : '5px 6px 6px 0px'};
   width: 50px;
   height: 50px;
   position: relative;
@@ -69,7 +69,7 @@ const PlayButton = styled.a`
 const Artwork = (props) => {
   return (
    
-    <ArtSpan>
+    <ArtSpan playlistArtSpan={props.playlistArtSpan}>
       <div>
         <ImageSpan imageUrl={props.imageUrl} />
       </div>
