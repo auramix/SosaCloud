@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const api = require('./api.js');
 
-
+const responseHeader = {
+  'Cache-Control': 'max-age=31536000'
+};
 
 app.use('/', express.static(__dirname + '/../client/dist'));
 app.use('/:id', express.static(__dirname + '/../client/dist'));
@@ -18,7 +20,7 @@ app.get('/api/track/:id', (req, res) => {
     if (err) {
       res.status(404).json(err);
     } else {
-      res.status(200).json(results);
+      res.set(responseHeader).status(200).json(results);
     }
   })
 })
@@ -31,7 +33,7 @@ app.get('/api/user/:user_name', (req, res) => {
       console.log('db Query Error: ', err);
       res.status(404).json(err);
     } else {
-      res.status(200).json(results);
+      res.set(responseHeader).status(200).json(results);
     }
   })
 })
@@ -44,7 +46,7 @@ app.get('/api/track/likes/:track_id', (req, res) => {
       console.log('db Query Error: ', err);
       res.status(404).json(err);
     } else {
-      res.status(200).json(results);
+      res.set(responseHeader).status(200).json(results);
     }
   })
 })
@@ -56,7 +58,7 @@ app.get('/api/playlists/:track_id', (req, res) => {
       console.log('getPlaylists error: ', err);
       res.status(404).json(err);
     } else {
-      res.status(200).json(results);
+      res.set(responseHeader).status(200).json(results);
     }
   })
 })
