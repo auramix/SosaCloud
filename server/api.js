@@ -7,8 +7,16 @@ const getRelatedTracks = function (id, callbk) {
   })
 }
 
-const getUserInfo = function (userName, callbk) {
-  db.connection.query('SELECT * FROM `users` WHERE `userName`= ? LIMIT 1', [userName], (err, results) => {
+// Can query user information with eaither a username or id
+const getUserInfo = function (user_identification, callbk) {
+  let query;
+  if (typeof user_identification === 'string') {
+    query = 'SELECT * FROM `users` WHERE `userName`= ? LIMIT 1';
+  } else if (typeof user_identification === 'number') {
+    query = 'SELECT * FROM `users` WHERE `id`= ?';
+  }
+
+  db.connection.query(query, [user_identification], (err, results) => {
     callbk(err, results);
   })
 }
