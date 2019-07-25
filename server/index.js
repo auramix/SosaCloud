@@ -6,8 +6,12 @@ const responseHeader = {
   'Cache-Control': 'max-age=31536000'
 };
 
-app.use('/', express.static(__dirname + '/../client/dist'));
-app.use('/:id', express.static(__dirname + '/../client/dist'));
+app.use('/', express.static(__dirname + '/../client/dist', {
+  maxAge: 31557600
+}));
+app.use('/:id', express.static(__dirname + '/../client/dist', {
+  maxAge: 31557600
+}));
 
 
 // Retrieves track info from db
