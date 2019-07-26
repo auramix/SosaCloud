@@ -5,7 +5,7 @@ import BadgeImage from '../likes/BadgeImage.jsx'
 const PopUpDiv = styled.div`
   visibility: hidden;
   position: absolute;
-  right: -104px;
+  right: ${props => (props.badge ? '-104px' : 150 - (props.artistName.length * 3) + 'px')};
   
   background-color: #fff;
   width: auto;
@@ -181,7 +181,7 @@ export default class ArtistPopUp extends React.Component {
       
       <div>
         {badge}
-        <PopUpDiv className={"artist-pop-up"} artistName={this.props.artistName}>
+        <PopUpDiv className={"artist-pop-up"} artistName={this.props.artistName} badge={this.props.badge}>
           <div style={{ cursor: "default" }}>
             <ArtistImageDiv>
               <ArtistImage imageUrl={this.state.userImageUrl} />
