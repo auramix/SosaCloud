@@ -9,7 +9,7 @@ const Badge = (props) => {
   return (
     <li>
       <a>
-         <UserPopUp artistName={props.key} badge={true}/>
+         <UserPopUp artistName={props.userId} badge={true}/>
       </a>
     </li>
   );

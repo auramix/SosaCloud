@@ -9,11 +9,12 @@ const getRelatedTracks = function (id, callbk) {
 
 // Can query user information with either a username or id
 const getUserInfo = function (user_identification, callbk) {
-  let id = typeof user_identification === 'string' ? `userName` : `id`;
+  let id = isNaN(Number(user_identification)) ? `userName` : `id`;
 
   let query = 'SELECT * FROM `users` WHERE ? = ? LIMIT 1'
 
-  db.connection.query(query, [id, user_identification], (err, results) => {
+  db.connection.query('SELECT * FROM users WHERE `Nola_Harber86` = ? LIMIT 1', [id], (err, results) => {
+    console.log('userInfo query ', query, id, user_identification);
     callbk(err, results);
   })
 }
