@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
-import LikesAnchor from '../styled-comps/AnchorRelatedTracks.jsx';
+import AnchorRelatedTracks from '../styled-comps/AnchorRelatedTracks.jsx';
+import LikesBadges from './LikesBadges.jsx';
 
 
 export default class Likes extends React.Component {
@@ -10,9 +11,9 @@ export default class Likes extends React.Component {
   }
 
   componentDidMount() {
-    let id = this.props.trackId || Math.ceil(Math.random() * 100);
+    let trackId = this.props.trackId || Math.ceil(Math.random() * 100);
 
-    fetch(`/api/likes/${id}`, {
+    fetch(`/api/likes/${trackId}`, {
       method: 'GET'
     })
       .then(data => data.json())
@@ -36,7 +37,10 @@ export default class Likes extends React.Component {
   render() {
     
     return (
-       <LikesAnchor textHeader={"Likes"} imageSize={"21px 24px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/like.svg)"}/>
+      <div>
+        <AnchorRelatedTracks textHeader={"Likes"} imageSize={"21px 24px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/like.svg)"}/>
+        <LikesBadges userIds={this.state.userIds}/>
+      </div>
     );
   }
 }

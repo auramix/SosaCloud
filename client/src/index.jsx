@@ -5,7 +5,7 @@ import AnchorRelatedTracks from './styled-comps/AnchorRelatedTracks.jsx';
 import RelatedTracks from './styled-comps/RelatedTrackList.jsx';
 import styled from 'styled-components';
 import Playlists from './in_playlists/Playlists.jsx';
-import Likes from './Likes.jsx';
+import Likes from './likes/Likes.jsx';
 
 
 const Sidebar = styled.div`

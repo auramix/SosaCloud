@@ -3,11 +3,14 @@ import React from 'react';
 import UserPopUp from '../styled-comps/ArtistPopUp.jsx';
 
 
+
 const Badge = (props) => {
   
   return (
     <li>
-
+      <a>
+         <UserPopUp />
+      </a>
     </li>
   );
   

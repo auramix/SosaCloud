@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import BadgeImage from '../likes/BadgeImage.jsx'
 
 const PopUpDiv = styled.div`
   visibility: hidden;
@@ -169,32 +170,42 @@ export default class ArtistPopUp extends React.Component {
   }
 
   render() {
+     let badge = null;
+      if (this.props.badge) {
+        badge = <BadgeImage imageUrl={this.state.userImageUrl}/>;
+      }
+
     return (
-      <PopUpDiv className={"artist-pop-up"} artistName={this.props.artistName}>
-        <div style={{ cursor: "default" }}>
-          <ArtistImageDiv>
-            <ArtistImage imageUrl={this.state.userImageUrl} />
-          </ArtistImageDiv>
+      
+      <div>
+        {badge}
+        <PopUpDiv className={"artist-pop-up"} artistName={this.props.artistName}>
+          <div style={{ cursor: "default" }}>
+            <ArtistImageDiv>
+              <ArtistImage imageUrl={this.state.userImageUrl} />
+            </ArtistImageDiv>
 
-          <div>
-            <ArtistAnchor>
-              <StyledSpan >{this.state.user}</StyledSpan>
-            </ArtistAnchor>
-          </div>
+            <div>
+              <ArtistAnchor>
+                <StyledSpan >{this.state.user}</StyledSpan>
+              </ArtistAnchor>
+            </div>
 
-          <div>
-            <FollowerCountAnchor>
-              <FollowerSpan>{this.state.followerCount}</FollowerSpan>
-            </FollowerCountAnchor>
-          </div>
+            <div>
+              <FollowerCountAnchor>
+                <FollowerSpan>{this.state.followerCount}</FollowerSpan>
+              </FollowerCountAnchor>
+            </div>
 
-          <div style={{ position: 'relative', color: '#999' }}>
-            <Location>{this.state.location}</Location>
+            <div style={{ position: 'relative', color: '#999' }}>
+              <Location>{this.state.location}</Location>
+            </div>
+            <FollowButton type={"button"}>Follow</FollowButton>
           </div>
-          <FollowButton type={"button"}>Follow</FollowButton>
-        </div>
-        <BoxArrow />
-      </PopUpDiv>
+          <BoxArrow />
+        </PopUpDiv>
+      </div>
+      
     )
   };
 
