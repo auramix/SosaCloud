@@ -12,7 +12,6 @@ const getUserInfo = function (user_identification, callbk) {
   let id = isNaN(Number(user_identification)) ? `userName` : `id`;
 
   db.connection.query(`SELECT * FROM users WHERE ${id} = ? LIMIT 1`, [user_identification], (err, results) => {
-    console.log('userInfo query ', query, id, user_identification);
     callbk(err, results);
   })
 }
