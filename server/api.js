@@ -7,7 +7,7 @@ const getRelatedTracks = function (id, callbk) {
   })
 }
 
-// Can query user information with eaither a username or id
+// Can query user information with either a username or id
 const getUserInfo = function (user_identification, callbk) {
   let query;
   if (typeof user_identification === 'string') {
@@ -21,8 +21,12 @@ const getUserInfo = function (user_identification, callbk) {
   })
 }
 
-const getLikesInfo = function (trackId, callbk) {
-  db.connection.query('SELECT * FROM `likes_tracks` WHERE `track_id`= ?', [trackId], (err, results, fields) => {
+const getLikesInfo = function (trackId, callbk, limit) {
+  let query = 'SELECT * FROM `likes_tracks` WHERE `track_id`= ?';
+  if (limit) {
+    query += ' LIMIT 9';
+  }
+  db.connection.query(query, [trackId], (err, results, fields) => {
     callbk(err, results);
   })
 }
