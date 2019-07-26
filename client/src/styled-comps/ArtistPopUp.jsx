@@ -43,6 +43,8 @@ const ArtistAnchor = styled.div`
   position: realtive;
   height: 19px;
   font-color: #333;
+  font-size: 14px
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   cursor: pointer;
   :hover {
     color: black;
@@ -86,6 +88,8 @@ const Location = styled.p`
   white-space: normal;
   text-align: center;
   overflow-wrap: normal;
+  font-size: 14px
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 `;
 
 const StyledSpan = styled.span`
@@ -195,7 +199,7 @@ export default class ArtistPopUp extends React.Component {
 
             <div>
               <FollowerCountAnchor>
-                <FollowerSpan>{this.state.followerCount}</FollowerSpan>
+                <FollowerSpan>{this.state.followerCount.toLocaleString()}</FollowerSpan>
               </FollowerCountAnchor>
             </div>
 

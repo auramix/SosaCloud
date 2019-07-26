@@ -33,7 +33,7 @@ export default class Likes extends React.Component {
     
     return (
       <div>
-        <AnchorRelatedTracks textHeader={this.state.likes + " Likes"} imageSize={"21px 24px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/like.svg)"}/>
+        <AnchorRelatedTracks textHeader={this.state.likes + " Likes"} imageSize={"20px 20px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/like.svg)"}/>
         <LikesBadges userIds={this.state.userIds}/>
       </div>
     );
