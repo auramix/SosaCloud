@@ -19,7 +19,7 @@ const getUserInfo = function (user_identification, callbk) {
 }
 
 const getLikesInfo = function (trackId, callbk, limit) {
-  let query = 'SELECT * FROM `likes_tracks` WHERE `track_id`= ?';
+  let query = 'SELECT DISTINCT `user_id` FROM `likes_tracks` WHERE `track_id`= ?';
   if (limit) {
     query += ' LIMIT 9';
   }

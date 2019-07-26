@@ -4,7 +4,7 @@ import Badge from './Badge.jsx';
 
 
 const LikesBadges = (props) => {
-  let badges = props.userIds.map(id => <Badge key={id} userId={id}/>)
+  let badges = props.userIds.map(obj => <Badge key={obj.user_id}/>)
 
   return (
     <div>

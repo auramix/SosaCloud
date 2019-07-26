@@ -23,11 +23,6 @@ export default class Likes extends React.Component {
           this.setState({ userIds: jsonData })
         }
       })
-      .then(() => {
-        if (this.state.Likes.length) {
-          this.props.renderLikes();
-        }
-      })
       .catch((err) => {
         console.log('***Client componentDidMount fetch error in Likes component***, ', err);
       })
