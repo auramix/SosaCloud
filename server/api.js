@@ -16,11 +16,9 @@ const getUserInfo = function (user_identification, callbk) {
   })
 }
 
-const getLikesInfo = function (trackId, callbk, limit) {
+const getLikesInfo = function (trackId, callbk) {
   let query = 'SELECT DISTINCT `user_id` FROM `likes_tracks` WHERE `track_id`= ?';
-  if (limit) {
-    query += ' LIMIT 9';
-  }
+
   db.connection.query(query, [trackId], (err, results, fields) => {
     callbk(err, results);
   })

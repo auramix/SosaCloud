@@ -5,7 +5,7 @@ import BadgeImage from '../likes/BadgeImage.jsx'
 const PopUpDiv = styled.div`
   visibility: hidden;
   position: absolute;
-  right: ${props => (150 - props.artistName.length * 3) + 'px'};
+  right: -104px;
   
   background-color: #fff;
   width: auto;
@@ -14,7 +14,7 @@ const PopUpDiv = styled.div`
   border-radius: 4px;
   padding: 10px;
   border: 1px solid #ccc;
-  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+  box-shadow: 0 2px 7px -1px rgba(0,0,0,.4);
   text-align: center;
   align-contents: center;
   

@@ -5,6 +5,8 @@ import Badge from './Badge.jsx';
 const BadgesList = styled.ul`
   list-style: none;
   display: flex;
+  padding-inline-start: 0px;
+  justify-content: center;
 `;
 
 

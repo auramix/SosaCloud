@@ -11,13 +11,19 @@ const BadgeItem = styled.li`
   }
 `;
 
+const BadgeAnchor = styled.a`
+  position: relative;
+  height: 0px;
+  width: 0px;
+`;
+
 const Badge = (props) => {
   
   return (
     <BadgeItem>
-      <a>
+      <BadgeAnchor>
          <UserPopUp artistName={props.userId} badge={true}/>
-      </a>
+      </BadgeAnchor>
     </BadgeItem>
   );
   
