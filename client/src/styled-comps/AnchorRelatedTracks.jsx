@@ -43,8 +43,8 @@ const StyledAnchor_ART = styled.a`
 
 const ViewAllSpan = styled(TextSpan_ART)`
   font-family: "InterstateSound Tnum", "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans";
-  position: relative;
-  left: 40%;
+  position: absolute;
+  right: 0;
   color: #999;
 
 `;

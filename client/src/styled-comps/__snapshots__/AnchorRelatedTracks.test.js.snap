@@ -6,9 +6,7 @@ exports[`AnchorRelatedTracks Has expected snapshot output 1`] = `
 >
   <styled.h3>
     <styled.span />
-    <styled.span>
-      Related tracks
-    </styled.span>
+    <styled.span />
   </styled.h3>
   <Styled(styled.span)
     className="view-all"

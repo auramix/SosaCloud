@@ -9,7 +9,7 @@
     "server": "nodemon ./server/server.js",
     "react-dev": "webpack -d --watch",
     "fakeData": "node db/fakeData.js",
-    "seed": "mysql -u root < db/schema.sql",
+    "seed": "mysql -u root -p < db/schema.sql",
     "dev": "concurrently \"npm run seed\" \"npm run fakeData\" \"npm run server\" \"npm run react-dev\""
   },
   "repository": {

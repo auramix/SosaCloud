@@ -23,6 +23,21 @@ describe('GET 3 related tracks, then take the userName and test return of user d
     expect(response.body).toHaveLength(1);
     expect(response.body).toBeInstanceOf(Array);
     expect(response.body[0]).hasOwnProperty('userName');
-    db.connection.end((err) => { if (err) console.log('Ending connection failed: ', err) })
+  })
+})
+
+// Playlists api tests
+
+describe('Call api and test structure of returned objects', () => {
+  it('Should return a user object', async () => {
+    let response = await request(app).get('/api/playlists/7');
+    expect(response.body).toBeInstanceOf(Array);
+    expect(response.body).not.toHaveLength(0);
+    expect(response.body[0]).hasOwnProperty('playlistName');
+    expect(response.statusCode).toBe(200);
+
+    db.connection.end((err) => {
+      if (err) console.log('Ending connection failed: ', err)
+    })
   })
 })

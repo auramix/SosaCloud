@@ -4,6 +4,7 @@ import Track from './components/Track.jsx';
 import AnchorRelatedTracks from './styled-comps/AnchorRelatedTracks.jsx';
 import RelatedTrackList from './styled-comps/RelatedTrackList.jsx';
 import styled from 'styled-components';
+import Playlists from './in_playlists/Playlists.jsx';
 
 
 const Sidebar = styled.div`
@@ -21,27 +22,26 @@ const AnchorInPlaylists = styled(AnchorRelatedTracks)`
   background-size: 18px 18px;
 `;
 
+const RelatedTracksDiv = styled.div`
+  margin-bottom: 20px;
+`;
+
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { relatedTracks: [], artistPopUpOpen: false };
+    this.state = { relatedTracks: [], artistPopUpOpen: false, playlists: false };
     this.artistPopUpListener = this.artistPopUpListener.bind(this);
+    this.renderPlaylists = this.renderPlaylists.bind(this);
   }
 
   componentDidMount() {
-    // uncommented randomId
-    console.log(this.props.path)
     let id = this.props.path || Math.ceil(Math.random() * 100);
     // added id to end point
     fetch(`/api/track/${id}`, {
       method: 'GET'
     })
       .then(data => data.json())
-      // .then(res => res.text()) // convert to plain text
-      // .then(text => console.log('TEXT', text))
       .then(jsonData => {
-        console.log('PATH => ', this.props.path);
-        console.log('RelatedTracks - ', jsonData);
         if (Array.isArray(jsonData)) {
           this.setState({ relatedTracks: jsonData })
         }
@@ -55,22 +55,33 @@ class App extends React.Component {
     this.setState({ artistPopUpOpen: !this.state.artistPopUpOpen })
   }
 
+  renderPlaylists() {
+    this.setState({playlists: true});
+  }
+
 
   render() {
     let relatedTracks = this.state.relatedTracks;
     if (relatedTracks.length > 0) {
       relatedTracks = relatedTracks.map(track => <Track key={track.id} track={track} artistPopUp={this.state.artistPopUpOpen} artistPopUpHandler={this.artistPopUpListener} />);
     }
+
+    let inPlaylists = null;
+    if (this.state.playlists) {
+      inPlaylists = <AnchorInPlaylists textHeader={"In playlists"} imageSize={"18px 18px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/inPlaylists.svg)"}/>
+    }
+
     return (
         <Sidebar>
-          <div>
-            <AnchorRelatedTracks textHeader={"Related tracks"} imageSize={"28px 28px"} imageUrl={"url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCI+PHBhdGggZmlsbD0iIzk5OSIgZD0iTTUgMTJoMnY0SDV6TTIxIDEyaDJ2NGgtMnpNMTcgMTBoMnY4aC0yek05IDhoMnYxMkg5ek0xMyA1aDJ2MThoLTJ6Ii8+PC9zdmc+)"}/>
+          <RelatedTracksDiv>
+            <AnchorRelatedTracks textHeader={"Related tracks"} imageSize={"28px 28px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/relatedTracks.svg)"}/>
             <RelatedTrackList>
               {relatedTracks}
             </RelatedTrackList>
-          </div>
+          </RelatedTracksDiv>
           <div>
-            <AnchorInPlaylists textHeader={"In playlists"} imageSize={"18px 18px"} imageUrl={"url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+aWNfcGxheWxpc3RfMTg8L3RpdGxlPjxnIGZpbGw9IiM5OTkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTIgNmgxMHYxMEgyeiIvPjxwYXRoIGZpbGwtb3BhY2l0eT0iLjciIGQ9Ik01IDJoMTF2MTBoLTJWNEg1eiIvPjwvZz48L3N2Zz4=)"}/>
+            {inPlaylists}
+            <Playlists renderPlaylists={this.renderPlaylists}/>
           </div>
         </Sidebar>
     );

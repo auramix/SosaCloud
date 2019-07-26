@@ -57,7 +57,7 @@ let createJuncData = function (qty) {
 /*    Generate the fake data    */
 let tracksData = createTracksData(100);
 let usersData = createUsersData(100);
-let playlistsData = createPlaylistsData(100);
+let playlistsData = createPlaylistsData(1000);
 let likesTracksData = createJuncData(1000);
 let playlistsTracksData = createJuncData(100);
 let repostsData = createJuncData(100);

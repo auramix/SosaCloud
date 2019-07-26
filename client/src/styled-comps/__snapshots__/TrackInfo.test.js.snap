@@ -4,18 +4,14 @@ exports[`TrackInfo Has expected snapshot output 1`] = `
 <styled.div>
   <TrackButtons />
   <div>
-    <Styled(styled.div)
-      as="a"
-      href=""
-    >
-      <span>
-        The Dude
-      </span>
-      <ArtistPopUp
-        artistName="The Dude"
-        user_name="The Dude"
-      />
-    </Styled(styled.div)>
+    <ArtistAnchorEl
+      track={
+        Object {
+          "artistName": "The Dude",
+          "trackName": "Knockin' on Heaven's Door",
+        }
+      }
+    />
   </div>
   <div>
     <Styled(styled.div)

@@ -19,6 +19,15 @@ const getLikesInfo = function (trackId, callbk) {
   })
 }
 
+const getPlaylists = function (trackId, callbk) {
+  db.connection.query('SELECT * FROM playlists WHERE id IN (SELECT `playlist_id` FROM `playlists_tracks` WHERE `track_id`=?) LIMIT 3', [trackId], (err, results, fileds) => {
+    callbk(err, results);
+  })
+}
+
+
+
 exports.getRelatedTracks = getRelatedTracks;
 exports.getUserInfo = getUserInfo;
 exports.getLikesInfo = getLikesInfo;
+exports.getPlaylists = getPlaylists;

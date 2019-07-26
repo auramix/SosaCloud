@@ -32,8 +32,8 @@ const ArtistAnchor = styled(TrackInfoDiv)`
 const ArtistAnchorEl = function(props) {
   return (
     <ArtistAnchor as="a" href={""} onMouseOver={props.artistPopUpHandler} onMouseOut={props.artistPopUpHandler}>
-      <span>{props.track.artistName}</span>
-      <ArtistPopUp imageUrl={props.imageUrl} user_name={props.track.artistName} artistName={props.track.artistName} />
+      <span>{props.track ? props.track.artistName : props.playlist.userName}</span>
+      <ArtistPopUp artistName={props.track ? props.track.artistName : props.playlist.userName} />
     </ArtistAnchor>
   )
 }

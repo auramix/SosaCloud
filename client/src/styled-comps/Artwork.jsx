@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const ArtSpan = styled.span`
   margin-right: 4px;
-  padding: 5px 6px 5px 5px;
+  padding: ${props => props.playlistArtSpan ? '0px 5px 0px 0px' : '5px 6px 6px 0px'};
   width: 50px;
   height: 50px;
   position: relative;
@@ -41,7 +41,7 @@ const PlayButton = styled.a`
   vertical-align: top;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDggMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlBsYXkgMjg8L3RpdGxlPjxwYXRoIGQ9Ik0wIDE0bDEuODQ2LTdMMCAwbDggNy04IDd6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
+  background-image: url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/playButton.svg);
 
 
 }
@@ -68,7 +68,8 @@ const PlayButton = styled.a`
 
 const Artwork = (props) => {
   return (
-    <ArtSpan>
+   
+    <ArtSpan playlistArtSpan={props.playlistArtSpan}>
       <div>
         <ImageSpan imageUrl={props.imageUrl} />
       </div>
@@ -76,6 +77,7 @@ const Artwork = (props) => {
         <PlayButton title={"Play"}></PlayButton>
       </PlayButtonSpan>
     </ArtSpan>
+   
   );
 
 }
