@@ -30,10 +30,11 @@ export default class Likes extends React.Component {
 
   
   render() {
-    
+    let text = this.state.likes === 1 ? " like" : " likes";
+
     return (
       <div>
-        <AnchorRelatedTracks textHeader={this.state.likes + " Likes"} imageSize={"20px 20px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/like.svg)"}/>
+        <AnchorRelatedTracks textHeader={this.state.likes + text} imageSize={"20px 20px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/like.svg)"}/>
         <LikesBadges userIds={this.state.userIds}/>
       </div>
     );

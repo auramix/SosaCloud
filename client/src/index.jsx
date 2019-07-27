@@ -6,6 +6,7 @@ import RelatedTracks from './styled-comps/RelatedTrackList.jsx';
 import styled from 'styled-components';
 import Playlists from './in_playlists/Playlists.jsx';
 import Likes from './likes/Likes.jsx';
+import Reposts from './reposts/Reposts.jsx'
 
 
 const Sidebar = styled.div`
@@ -89,6 +90,10 @@ class App extends React.Component {
 
           <WidgetDiv>
             <Likes trackId={this.props.path}/>
+          </WidgetDiv>
+          
+          <WidgetDiv>
+            <Reposts trackId={this.props.path}/>
           </WidgetDiv>
 
         </Sidebar>

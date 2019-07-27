@@ -55,6 +55,19 @@ app.get('/api/track/likes/:track_id', (req, res) => {
   })
 })
 
+// Retrieves number of likes for a given track
+app.get('/api/track/reposts/:track_id', (req, res) => {
+  let trackId = req.params.track_id;
+  api.getRepostsInfo(trackId, (err, results) => {
+    if (err) {
+      console.log('db Query Error: ', err);
+      res.status(404).json(err);
+    } else {
+      res.set(responseHeader).status(200).json(results);
+    }
+  })
+})
+
 app.get('/api/playlists/:track_id', (req, res) => {
   let trackId = req.params.track_id;
   api.getPlaylists(trackId, (err, results) => {
