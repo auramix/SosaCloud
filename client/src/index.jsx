@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Track from './components/Track.jsx';
 import AnchorRelatedTracks from './styled-comps/AnchorRelatedTracks.jsx';
-import RelatedTrackList from './styled-comps/RelatedTrackList.jsx';
+import RelatedTracks from './styled-comps/RelatedTrackList.jsx';
 import styled from 'styled-components';
 import Playlists from './in_playlists/Playlists.jsx';
+import Likes from './likes/Likes.jsx';
+import Reposts from './reposts/Reposts.jsx'
 
 
 const Sidebar = styled.div`
@@ -22,7 +24,7 @@ const AnchorInPlaylists = styled(AnchorRelatedTracks)`
   background-size: 18px 18px;
 `;
 
-const RelatedTracksDiv = styled.div`
+const WidgetDiv = styled.div`
   margin-bottom: 20px;
 `;
 
@@ -73,16 +75,27 @@ class App extends React.Component {
 
     return (
         <Sidebar>
-          <RelatedTracksDiv>
+
+          <WidgetDiv>
             <AnchorRelatedTracks textHeader={"Related tracks"} imageSize={"28px 28px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/relatedTracks.svg)"}/>
-            <RelatedTrackList>
+            <RelatedTracks>
               {relatedTracks}
-            </RelatedTrackList>
-          </RelatedTracksDiv>
-          <div>
+            </RelatedTracks>
+          </WidgetDiv>
+
+          <WidgetDiv>
             {inPlaylists}
             <Playlists renderPlaylists={this.renderPlaylists}/>
-          </div>
+          </WidgetDiv>
+
+          <WidgetDiv>
+            <Likes trackId={this.props.path}/>
+          </WidgetDiv>
+          
+          <WidgetDiv>
+            <Reposts trackId={this.props.path}/>
+          </WidgetDiv>
+
         </Sidebar>
     );
   }

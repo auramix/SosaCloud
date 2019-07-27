@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1563996157599" clover="3.2.0">
-  <project timestamp="1563996157599" name="All files">
-    <metrics statements="451" coveredstatements="108" conditionals="410" coveredconditionals="7" methods="189" coveredmethods="21" elements="1050" coveredelements="136" complexity="0" loc="451" ncloc="451" packages="10" files="28" classes="28"/>
+<coverage generated="1564077257952" clover="3.2.0">
+  <project timestamp="1564077257952" name="All files">
+    <metrics statements="451" coveredstatements="124" conditionals="410" coveredconditionals="8" methods="189" coveredmethods="25" elements="1050" coveredelements="157" complexity="0" loc="451" ncloc="451" packages="10" files="28" classes="28"/>
     <package name="sidebar-views">
       <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="babel.config.js" path="/Users/scottjosephson/Desktop/Hack_Reactor/sidebar-views/sidebar-views/babel.config.js">
@@ -176,21 +176,21 @@
       </file>
     </package>
     <package name="sidebar-views.client.src.in_playlists">
-      <metrics statements="27" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="11" coveredmethods="0"/>
+      <metrics statements="27" coveredstatements="16" conditionals="8" coveredconditionals="1" methods="11" coveredmethods="4"/>
       <file name="PlaylistInfo.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/sidebar-views/sidebar-views/client/src/in_playlists/PlaylistInfo.jsx">
-        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
+        <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
       </file>
       <file name="Playlists.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/sidebar-views/sidebar-views/client/src/in_playlists/Playlists.jsx">
-        <metrics statements="15" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="8" coveredmethods="0"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
+        <metrics statements="15" coveredstatements="5" conditionals="8" coveredconditionals="1" methods="8" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
         <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="15" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
@@ -200,18 +200,18 @@
         <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="27" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
       </file>
       <file name="SinglePlaylist.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/sidebar-views/sidebar-views/client/src/in_playlists/SinglePlaylist.jsx">
-        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
       </file>
     </package>
     <package name="sidebar-views.client.src.styled-comps">
@@ -230,25 +230,25 @@
       </file>
       <file name="ArtistAnchor.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/sidebar-views/sidebar-views/client/src/styled-comps/ArtistAnchor.jsx">
         <metrics statements="4" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
       </file>
       <file name="ArtistPopUp.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/sidebar-views/sidebar-views/client/src/styled-comps/ArtistPopUp.jsx">
         <metrics statements="20" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="3"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
-        <line num="23" count="2" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="31" count="4" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
-        <line num="51" count="2" type="stmt"/>
-        <line num="79" count="2" type="stmt"/>
-        <line num="90" count="2" type="stmt"/>
-        <line num="100" count="2" type="stmt"/>
-        <line num="107" count="2" type="stmt"/>
-        <line num="122" count="2" type="stmt"/>
+        <line num="41" count="4" type="stmt"/>
+        <line num="51" count="4" type="stmt"/>
+        <line num="79" count="4" type="stmt"/>
+        <line num="90" count="4" type="stmt"/>
+        <line num="100" count="4" type="stmt"/>
+        <line num="107" count="4" type="stmt"/>
+        <line num="122" count="4" type="stmt"/>
         <line num="141" count="1" type="stmt"/>
         <line num="142" count="1" type="stmt"/>
         <line num="151" count="0" type="stmt"/>
@@ -260,14 +260,14 @@
       </file>
       <file name="Artwork.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/sidebar-views/sidebar-views/client/src/styled-comps/Artwork.jsx">
         <metrics statements="9" coveredstatements="6" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="1"/>
-        <line num="5" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
         <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
         <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="69" count="1" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="69" count="3" type="stmt"/>
         <line num="70" count="2" type="stmt"/>
       </file>
       <file name="MoreButtonList.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/sidebar-views/sidebar-views/client/src/styled-comps/MoreButtonList.jsx">
@@ -285,7 +285,7 @@
       </file>
       <file name="RelatedTrackList.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/sidebar-views/sidebar-views/client/src/styled-comps/RelatedTrackList.jsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
       </file>
       <file name="TrackButtons.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/sidebar-views/sidebar-views/client/src/styled-comps/TrackButtons.jsx">
         <metrics statements="9" coveredstatements="5" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="0"/>
@@ -309,12 +309,12 @@
       </file>
       <file name="TrackInteractions.jsx" path="/Users/scottjosephson/Desktop/Hack_Reactor/sidebar-views/sidebar-views/client/src/styled-comps/TrackInteractions.jsx">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="18" count="2" type="stmt"/>
-        <line num="44" count="2" type="stmt"/>
-        <line num="53" count="2" type="stmt"/>
-        <line num="58" count="2" type="stmt"/>
-        <line num="65" count="2" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="44" count="4" type="stmt"/>
+        <line num="53" count="4" type="stmt"/>
+        <line num="58" count="4" type="stmt"/>
+        <line num="65" count="4" type="stmt"/>
         <line num="66" count="2" type="stmt"/>
       </file>
     </package>

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SinglePlaylist Has expected snapshot output 1`] = `
+<styled.li>
+  <styled.div>
+    <styled.span>
+      <Artwork
+        imageUrl="value"
+        playlistArtSpan={true}
+      />
+    </styled.span>
+    <PlaylistInfo
+      playlist={
+        Object {
+          "playlistImgUrl": "value",
+        }
+      }
+    />
+  </styled.div>
+</styled.li>
+`;

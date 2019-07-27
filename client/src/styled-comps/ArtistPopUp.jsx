@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import BadgeImage from '../likes/BadgeImage.jsx'
 
 const PopUpDiv = styled.div`
   visibility: hidden;
   position: absolute;
-  right: ${props => (150 - props.artistName.length * 3) + 'px'};
+  right: ${props => (props.badge ? '-104px' : 150 - (props.artistName.length * 3) + 'px')};
   
   background-color: #fff;
   width: auto;
@@ -13,7 +14,7 @@ const PopUpDiv = styled.div`
   border-radius: 4px;
   padding: 10px;
   border: 1px solid #ccc;
-  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+  box-shadow: 0 2px 7px -1px rgba(0,0,0,.4);
   text-align: center;
   align-contents: center;
   
@@ -42,6 +43,8 @@ const ArtistAnchor = styled.div`
   position: realtive;
   height: 19px;
   font-color: #333;
+  font-size: 14px
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   cursor: pointer;
   :hover {
     color: black;
@@ -85,6 +88,8 @@ const Location = styled.p`
   white-space: normal;
   text-align: center;
   overflow-wrap: normal;
+  font-size: 14px
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 `;
 
 const StyledSpan = styled.span`
@@ -148,7 +153,9 @@ export default class ArtistPopUp extends React.Component {
   }
 
   componentDidMount() {
-    let userName = this.props.artistName.trim();
+    let userName = this.props.artistName;
+    userName = this.props.badge ? userName : userName.trim();
+    
     fetch(`/api/user/${userName}`, {
       method: 'GET'
     })
@@ -169,32 +176,42 @@ export default class ArtistPopUp extends React.Component {
   }
 
   render() {
+     let badge = null;
+      if (this.props.badge) {
+        badge = <BadgeImage imageUrl={this.state.userImageUrl}/>;
+      }
+
     return (
-      <PopUpDiv className={"artist-pop-up"} artistName={this.props.artistName}>
-        <div style={{ cursor: "default" }}>
-          <ArtistImageDiv>
-            <ArtistImage imageUrl={this.state.userImageUrl} />
-          </ArtistImageDiv>
+      
+      <div>
+        {badge}
+        <PopUpDiv className={"artist-pop-up"} artistName={this.props.artistName} badge={this.props.badge}>
+          <div style={{ cursor: "default" }}>
+            <ArtistImageDiv>
+              <ArtistImage imageUrl={this.state.userImageUrl} />
+            </ArtistImageDiv>
 
-          <div>
-            <ArtistAnchor>
-              <StyledSpan >{this.state.user}</StyledSpan>
-            </ArtistAnchor>
-          </div>
+            <div>
+              <ArtistAnchor>
+                <StyledSpan >{this.state.user}</StyledSpan>
+              </ArtistAnchor>
+            </div>
 
-          <div>
-            <FollowerCountAnchor>
-              <FollowerSpan>{this.state.followerCount}</FollowerSpan>
-            </FollowerCountAnchor>
-          </div>
+            <div>
+              <FollowerCountAnchor>
+                <FollowerSpan>{this.state.followerCount.toLocaleString()}</FollowerSpan>
+              </FollowerCountAnchor>
+            </div>
 
-          <div style={{ position: 'relative', color: '#999' }}>
-            <Location>{this.state.location}</Location>
+            <div style={{ position: 'relative', color: '#999' }}>
+              <Location>{this.state.location}</Location>
+            </div>
+            <FollowButton type={"button"}>Follow</FollowButton>
           </div>
-          <FollowButton type={"button"}>Follow</FollowButton>
-        </div>
-        <BoxArrow />
-      </PopUpDiv>
+          <BoxArrow />
+        </PopUpDiv>
+      </div>
+      
     )
   };
 
