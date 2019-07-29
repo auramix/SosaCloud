@@ -40,7 +40,7 @@ const TrackInfo = function (props) {
       </div>
 
       <div>
-        <TrackNameAnchor as="a" href={""}>
+        <TrackNameAnchor as="a" href={""} onClick={(e) => e.preventDefault()}>
           {props.track.trackName}
         </TrackNameAnchor>
       </div>

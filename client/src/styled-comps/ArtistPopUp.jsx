@@ -28,10 +28,13 @@ const ArtistImageDiv = styled.div`
   width:  80px;
   margin: 5px auto 15px;
 `;
-
+//
 const ArtistImage = styled.span`
   display: inline-block;
   background-image: ${props => `url(${props.imageUrl})`};
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   height: 80px;
   width 80px;
   border-radius: 50%;

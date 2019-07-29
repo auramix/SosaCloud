@@ -9,6 +9,7 @@ const ArtSpan = styled.span`
   height: 50px;
   position: relative;
   float: left;
+  
 `;
 
 
@@ -18,6 +19,7 @@ const ImageSpan = styled.span`
   width: 50px;
   display: block;
   background-size: cover;
+  box-shadow: rgba(0,0,0,.1)0 0 0 1px inset;
 `;
 
 const PlayButtonSpan = styled.span`

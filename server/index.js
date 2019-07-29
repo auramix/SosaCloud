@@ -80,17 +80,4 @@ app.get('/api/playlists/:track_id', (req, res) => {
   })
 })
 
-// // Retrieves userIds associated with liking a given trackId
-// app.get('/api/likes/:track_id', (req, res) => {
-//   let trackId = req.params.track_id;
-//   api.getLikesInfo(trackId, (err, results) => {
-//     if (err) {
-//       console.log('db Query Error: ', err);
-//       res.status(404).json(err);
-//     } else {
-//       res.set(responseHeader).status(200).json(results);
-//     }
-//   }, true)
-// })
-
 module.exports = app;
