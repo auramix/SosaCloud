@@ -56,7 +56,7 @@ const TrackButtons = function (props) {
   return (
     <StyledDiv className={"overlay_buttons"} clicked={props.moreClicked}>
       <LikeButton title={"Like"} onClick={props.likeClickHandler} clicked={props.likeClicked} />
-      <MoreButtonDiv clickHandler={props.moreClickHandler} clicked={props.moreClicked} />
+      <MoreButtonDiv trackId={props.trackId} clickHandler={props.moreClickHandler} clicked={props.moreClicked} />
     </StyledDiv>
   );
 

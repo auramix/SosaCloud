@@ -68,7 +68,7 @@ export default class Track extends React.Component {
 
   globalEventListener() {
     document.body.addEventListener('click', e => {
-      if (e.target.id !== 'more-btn') {
+      if (e.target.id !== 'more-btn' + this.props.track.id) {
         this.setState({ moreClicked: false });
       }
       this.removeGlobalListener();
@@ -77,9 +77,10 @@ export default class Track extends React.Component {
 
   removeGlobalListener() {
     document.body.removeEventListener('click', e => {
-      if (e.target.id !== 'more-btn') {
+      if (e.target.id !== 'more-btn' + this.props.track.id) {
         this.setState({ moreClicked: false });
       }
+      this.removeGlobalListener();
     })
   }
 

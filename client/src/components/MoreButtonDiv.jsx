@@ -41,7 +41,7 @@ const MoreButton = styled.button`
 const MoreButtonDiv = function (props) {
   return (
     <div>
-      <MoreButton id={"more-btn"} title={"More"} clicked={props.clicked} onClick={props.clickHandler} />
+      <MoreButton id={"more-btn" + props.trackId} title={"More"} clicked={props.clicked} onClick={(e) => props.clickHandler(e)} />
     </div>
   )
 }

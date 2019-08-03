@@ -34,7 +34,7 @@ const TrackInfo = function (props) {
 
   return (
     <TrackInfoDiv>
-      <TrackButtons moreClickHandler={props.moreClickHandler} moreClicked={props.moreClicked} likeClicked={props.likeClicked} likeClickHandler={props.likeClickHandler} />
+      <TrackButtons trackId={props.track.id} moreClickHandler={props.moreClickHandler} moreClicked={props.moreClicked} likeClicked={props.likeClicked} likeClickHandler={props.likeClickHandler} />
       <div>
         <ArtistAnchorEl {...props}/>
       </div>
