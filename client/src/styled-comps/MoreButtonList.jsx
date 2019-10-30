@@ -6,8 +6,7 @@ const StyledDiv = styled.div`
   position: absolute;
   width: 150px;
   height: 160px;
-  left: 200px;
-
+  left: 300px;
   border: 1px solid #e5e5e5;
   background: #fff;
   box-shadow: 0 2px 10px rgba(0,0,0,.1);

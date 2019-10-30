@@ -9,9 +9,7 @@ const ArtSpan = styled.span`
   height: 50px;
   position: relative;
   float: left;
-  
 `;
-
 
 const ImageSpan = styled.span`
   background-image: url(${props => props.imageUrl});
@@ -44,8 +42,6 @@ const PlayButton = styled.a`
   background-repeat: no-repeat;
   background-position: center center;
   background-image: url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/playButton.svg);
-
-
 }
 
 ::after {
@@ -62,7 +58,6 @@ const PlayButton = styled.a`
   :hover {
     background-color: #f30;  
   }
-  
 `;
 
 
@@ -81,7 +76,6 @@ const Artwork = (props) => {
     </ArtSpan>
    
   );
-
 }
 
 export { Artwork, ImageSpan };
