@@ -19,6 +19,14 @@
 
 ![](sosaCloud.gif)
 
+## API
+
+> ###GET### '/api/track/:id' - Retrieves information for a specific track
+> ###GET### '/api/user/:user_name' - Retrieves user information for a specific user
+> ###GET### '/api/track/likes/:track_id' - Retrieves ids of users who have liked the specified track
+> ###GET### '/api/track/reposts/:track_id' - Retrieves ids of users who have reposted specified track 
+> ###GET### '/api/playlists/:track_id' - Retrieves no more than 3 playlists that contain the specified track
+
 ## Requirements
 
 
