@@ -68,6 +68,7 @@ app.get('/api/track/reposts/:track_id', (req, res) => {
   })
 })
 
+// Selects three playlists that contain given track
 app.get('/api/playlists/:track_id', (req, res) => {
   let trackId = req.params.track_id;
   api.getPlaylists(trackId, (err, results) => {
