@@ -36,6 +36,6 @@
 
 ### Installing Dependencies
 
-From within the root directory:
+From within the root directory: `npm install`
 
 
